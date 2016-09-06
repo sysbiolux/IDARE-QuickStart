@@ -110,7 +110,8 @@ You can now navigate through the different pathways. If you wish to create addit
 New links will be added to the existing networks.
 
 You will notice, that links from parental networks will be included in the newly created networks, but no links are generated in these parental networks. 
-In general, links will be generated for all networks built on the same column, that share linking nodes.  
+In general, links will be generated for all networks built on the same column, that share linking nodes. 
+If you create additional subnetworks at a later stage, links to and from old networks will be created for all newly generated networks.
 
 
 
