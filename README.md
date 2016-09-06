@@ -13,7 +13,7 @@ ReactionActivity.xls - experimental and predicted activity of each reaction in t
 The Tutorial Contains three parts.  
 In Part 1, we set up the network, which is necessary for image matching.  
 In Part 2, we add images based on the data to the network.  
-
+In Part 3, we will split the network into parts based on compartments and pathways.  
 
 ## Part 1: Setting up the Network for IDARE in Cytoscape
 
