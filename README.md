@@ -6,7 +6,7 @@ or by right-clicking on this [Link](http://systemsbiology.ucsd.edu/sites/default
 Also obtain the files in this repository for a some sample data.
 
 The following files can be downloaded via the repository zip file, or from the [Data Folder](https://github.com/sysbiolux/IDARE-QuickStart/tree/master/Data):  
-Activity.xls - Predicted Activity in four different phases of the experiment  
+Activity.xls - Predicted activity in four different phases of the experiment  
 External Metabolites.xls - Data for 3 external Metabolites (and the biomass amount) over a period of time  
 Internal Metabolites.xls - Data for all internal Metabolites at different textual stages.  
 ReactionActivity.xls - experimental and predicted activity of each reaction in the network  
