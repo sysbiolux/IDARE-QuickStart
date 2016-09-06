@@ -48,7 +48,7 @@ You will notice, that additional nodes have been created, which represent the ge
 ##Part2: Automated image generation and loading images to the Network.
 
 ####Load Data into IDARE
-In the Control Panel, select the IDARE tab.  
+In the 'Control Panel', select the IDARE tab.  
 Click on 'Add Dataset'  
 In the dialog, click on 'Choose File'  
 Select "Activity.xls" and click 'open'  
@@ -59,7 +59,7 @@ Click ok.
 
 Repeat the process with "External Metabolites.xls" and "ReactionActivity.xls" which should both be loaded as 'ValueSet Datasets'.
 Even though ReactionActivity.xls contains only one sheet, the number of datapoints is unsuitable for itemized representation. 
-Thus importing it as a 'Valueset Dataset' with one set allows it to be displayed e.g. as a Graph.  
+Thus importing it as a 'Valueset Dataset' with one set allows it to be displayed e.g. as a graph.  
 Finally repeat the process with "Internal Metabolites.xls" which should be loaded as 'Itemized Dataset' and is a two column header file, so the checkbox has to be ticked.
 Example descriptions would be "External Metabolite amount information" and "Reaction Activity during the experiment" and "Internal Metabolite Amounts at specific stages".
 
@@ -74,7 +74,7 @@ Images will only be created for nodes which are part of a selected dataset and o
 
 ##Part3: Subnetwork Generation
 
-This tutorial is independent on the first 2 tutorials. It is however strongly recommended to add the SBML annotation and to set up the network for use with idare prior to creating subnetworks.
+This tutorial is independent on the first 2 tutorials. It is however strongly recommended to add the SBML annotation and to set up the network for use with IDARE prior to creating subnetworks.
 SBML annotation can e.g. not be carried out for subnetworks and gene nodes will therefore not be included in a subnetwork, when added to the parental network. 
 
 #### Create Networks for the External compartment and the cytosol
@@ -86,13 +86,13 @@ If the network is set up for IDARE (see Part 1), the corresponding columns choos
 You further have to choose a value for nodes which form the branching points between subnetworks, and a value for nodes that form the "base" of the subnetwork.
 Since the aim is to branch at the transporters between compartments reactions will be used as branching nodes and species as subsystem nodes.   
 Click accept, when you finished your selection.  
-In the next dialog, you can select the column that contains the subsystem identifiers as well as the type of layout that should be used for the subsystems (or the "keep layout" option, if the current layout shoudl be kept)
+In the next dialog, you can select the column that contains the subsystem identifiers as well as the type of layout that should be used for the subsystems (or the "keep layout" option, if the current layout should be kept).
 The table allows you to select nodes, which should not branch and those which should be removed entirely  (e.g. nodes with too many connections).   
 Depending on the network size some nodes are already suggested by the tool.  
 Since we want to create the networks for the cytosol and external compartment, we select "sbml compartment" as column to determine sub-networks.  
 We leave the 'Keep Layout' option as it is and select remove for the Biomass reaction (as this reaction mainly leads to a hairball structure).  
-We also select C\_c,  the cytosol, and C\_e, the external medium, in the sub-networks to be generated table.   
-If we now click on the "network" tab in the Control panel we will see two new networks that were generated.   
+We also select C\_c, the cytosol, and C\_e, the external medium, in the sub-networks to be generated table.   
+If we now click on the "network" tab in the 'Control Panel' we will see two new networks that were generated.   
 
 #### Create pathway networks in the Cytosol
 There is not much to see in the external compartment, as it only contains the transporters and the cytosol is still a hairball. 
