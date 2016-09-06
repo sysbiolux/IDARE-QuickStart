@@ -5,6 +5,7 @@ The data can be used with the *E.coli* core network sbml file obtainable from th
 or by right-clicking on this [Link](http://systemsbiology.ucsd.edu/sites/default/files/Attachments/Images/downloads/Ecoli_core/ecoli_core_model.xml) and selecting "save as".
 Also obtain the files in this repository for a some sample data.
 
+The following files can be downloaded via the repository zip file, or from the [Data Folder](https://github.com/sysbiolux/IDARE-QuickStart/tree/master/Data):
 Activity.xls - Predicted Activity in four different phases of the experiment  
 External Metabolites.xls - Data for 3 external Metabolites (and the biomass amount) over a period of time  
 Internal Metabolites.xls - Data for 3 internal Metabolites at different textual stages.  
