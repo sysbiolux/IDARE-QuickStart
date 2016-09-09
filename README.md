@@ -30,7 +30,7 @@ From the Layout menu, select a layout you want to apply (for this tutorial we as
 
 Right click on some empty space in the network view.  
 Select 'Apps' -> 'Setup Network For IDARE'  
-A popup will appear That lets you select the properties to be used in IDARE.  
+A popup will appear that lets you select the properties to be used in IDARE.  
 On the left you can select the columns you want to use for the setup. On the right, depending on your choice of columns, you can select the values to be used for compound and interaction.  
 Select the sbml type column as column to determine node types and the sbml id column as column to determine the node names.  
 As compound node value select species, and as interaction node value select reaction.  
@@ -52,8 +52,8 @@ If the SBML contains enzyme species (annotated by the "isEncodedBy" bio qualifie
 In this example you will generate a few images based on artificial data and map it to the previously created and initialized network.
 This example assumes that you have at loaded the E.coli core network and set up the network for IDARE (Steps 1 and 3 of the previous example).
 
-####2.1 Load Data into IDARE
-In the Control Panel, select the IDARE tab.  
+####Load Data into IDARE
+In the 'Control Panel', select the IDARE tab.  
 Click on 'Add Dataset'  
 In the dialog, click on 'Choose File'  
 Select "Activity.xls" and click 'open'  
@@ -64,7 +64,7 @@ Click ok.
 
 Repeat the process with "External Metabolites.xls" and "ReactionActivity.xls" which should both be loaded as 'ValueSet Datasets'.
 Even though ReactionActivity.xls contains only one sheet, the number of datapoints is unsuitable for itemized representation. 
-Thus importing it as a 'Valueset Dataset' with one set allows it to be displayed e.g. as a Graph.  
+Thus importing it as a 'Valueset Dataset' with one set allows it to be displayed e.g. as a graph.  
 Finally repeat the process with "Internal Metabolites.xls" which should be loaded as 'Itemized Dataset' and is a two column header file, so the checkbox has to be ticked.
 Example descriptions would be "External Metabolite amount information" and "Reaction Activity during the experiment" and "Internal Metabolite Amounts at specific stages".
 
@@ -103,8 +103,8 @@ The table allows you to select nodes, which should not branch and those which sh
 Depending on the network size some nodes are already suggested by the tool.  
 Since we want to create the networks for the cytosol and external compartment, we select "sbml compartment" as column to determine sub-networks.  
 We leave the 'Keep Layout' option as it is and select remove for the Biomass reaction (as this reaction mainly leads to a hairball structure).  
-We also select C\_c,  the cytosol, and C\_e, the external medium, in the sub-networks to be generated table.   
-If we now click on the "network" tab in the Control panel we will see two new networks that were generated.   
+We also select C\_c, the cytosol, and C\_e, the external medium, in the sub-networks to be generated table.   
+If we now click on the "network" tab in the 'Control Panel' we will see two new networks that were generated.   
 
 ####3.2 Create pathway networks in the Cytosol
 There is not much to see in the external compartment, as it only contains the transporters and the cytosol is still a hairball. 
