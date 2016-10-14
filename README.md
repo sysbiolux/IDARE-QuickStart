@@ -24,7 +24,7 @@ After installing the IDARE app (either from the Cytoscape app store or from [her
 File -> Import -> Network -> File and select the *E.Coli* core file you downloaded.
 
 #### 1.2 Generating an initial Layout
-From the Layout menu, select a layout you want to apply (for this tutorial we assume, that the **y-Files organic layout** was choosen).
+From the Layout menu, select a layout you want to apply (for this tutorial we assume, that the **y-Files organic layout** was choosen, or no additional layout if you have cy3sbml installed).
 
 #### 1.3 Setting up the Network for IDARE
 
@@ -35,6 +35,7 @@ On the left you can select the columns you want to use for the setup. On the rig
 Select the sbml type column as column to determine node types and the sbml id column as column to determine the node names.  
 As compound node value select species, and as interaction node value select reaction.  
 Check the 'Overwrite existing values' checkbox.  
+If you are using cy3sbml please select the Base network view (it should have 187 nodes and 380 edges).
 
 #### 1.4 Changing to the IDARE Visual Style
 From the 'Style' tab in the 'Control Panel' select the 'IDARE Visual Style' and apply it to the network.
@@ -42,10 +43,10 @@ From the 'Style' tab in the 'Control Panel' select the 'IDARE Visual Style' and 
 #### 1.5 Adding SBML Annotations and Gene Nodes
 Right click on some empty space in the network view.  
 Select 'Apps' -> 'Add SBML Annotations'  
-Select the *E.Coli* core network file again. If you have cy3sbml this step is not necessary, as Cytoscape will automatically use the SBML structure provided by cy3sbml for the network.  
-You will be asked, whether you want to add Gene Nodes. Click Yes  
-You will notice, that additional nodes have been created, which represent the gene nodes.  
-If the SBML contains enzyme species (annotated by the "isEncodedBy" bio qualifier), you would be asked if you also want to create protein nodes and which labeling pattern (i.e. database) to use for the genes and proteins.
+Select the *E.Coli* core network file again. If you have cy3sbml this step is not necessary, as IDARE will automatically use the SBML structure provided by cy3sbml for the network.  
+You will be asked, whether you want to add Gene Nodes. Tick the box (if not done already) and click Ok.  
+You will notice, that additional nodes have been created, which represent the protein and gene nodes that were created. Proteins are created for all conjunctive GPR clauses (i.e. all possible and combinations that fulfil a GPR).  
+If the SBML contains enzyme species (annotated by the "isEncodedBy" bio qualifier), you would be asked which labeling pattern (i.e. database) to use for the genes and proteins.
 
 
 ##Part2: Automated image generation and loading images to the Network.
@@ -74,7 +75,7 @@ To do so, choose a selection of datasets from the table by ticking the "selected
 In the lower left corner, (below the 'Create' and 'Preview' buttons) are indicators, how many nodes the datasets represent in total and how many shared nodes the selection contains.  
 When creating visualisations for multiple datasets at once, there should be an overlap of the sets, otherwise parts of the generated image will always stay blank since no data is available.
 However, you can of course create multiple different nodes by selecting different sets of data.
-Images will only be created for nodes which are part of a selected dataset and old images will be kept unless a new image is created.
+Images will only be created for nodes which are part of a selected dataset and old images will be kept unless a new image is created for the node.
 
 ####2.3 Adding IDARE images to other Styles
 If you did not select the IDARE visual style, but want to use a different style for your network, you can do so by right-clicking anywhere in a network view using the style you want to add your nodes to.
@@ -94,7 +95,7 @@ Select 'Apps' -> 'IDARE' -> 'Create Subnetworks'
 or  
 Right Click in an empty space in the network you want to create subnetworks in -> 'Apps' -> 'Create Subnetworks'  
 In the resulting dialog, you can select the column to determine the node types as well as the node names.  
-If the network is set up for IDARE (see Part 1), the corresponding columns choosen there are automatically selected.  
+If the network is set up for IDARE (see Part 1), appropriate columns are chosen automatically (i.e. if you have set up the network for idare - Step 1.3 - you can just accept the selection) .  
 You further have to choose a value for nodes which form the branching points between subnetworks, and a value for nodes that form the "base" of the subnetwork.
 Since the aim is to branch at the transporters between compartments reactions will be used as branching nodes and species as subnetwork nodes.   
 Click accept, when you finished your selection.  
