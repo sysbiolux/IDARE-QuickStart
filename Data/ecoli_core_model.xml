@@ -2,7 +2,7 @@
 <sbml xmlns="http://www.sbml.org/sbml/level2" level="2" version="1">
   <model id="Ecoli_core_model" name="Ecoli_core_model">
     <notes>
-      <body xmlns="http://www.w3.org/1999/xhtml"><p>COBRA_Toolbox</p></body>
+      <body xmlns="http://www.w3.org/1999/xhtml"><p>COBRA_Toolbox, small corrections to adhere to the COBRA definitions (i.e. changing the note field tags from html to body)</p></body>
     </notes>
     <listOfUnitDefinitions>
       <unitDefinition id="mmol_per_gDW_per_hr">

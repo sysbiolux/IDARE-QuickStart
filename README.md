@@ -1,12 +1,12 @@
 # IDARE Example
 
 This Repository contains basic **artificial** sample datasets to use with the IDARE cytoscape application.
-The data can be used with the *E.coli* core network sbml file obtainable from the [UCSD website](http://systemsbiology.ucsd.edu/Downloads/EcoliCore), 
-or by right-clicking on this [Link](http://systemsbiology.ucsd.edu/sites/default/files/Attachments/Images/downloads/Ecoli_core/ecoli_core_model.xml) and selecting "save as".
-Also obtain the files in this repository for a some sample data.
+The data can be used with the *E.coli* core network sbml file obtainable from the [Data folder](https://github.com/sysbiolux/IDARE-QuickStart/tree/master/Data), 
+or by right-clicking on this [Link](https://github.com/sysbiolux/IDARE-QuickStart/blob/master/Data/ecoli_core_model.xml) and selecting "save as".
+Also obtain the excel files in this repository for a some **artificial** sample data.
 
 The following files can be downloaded via the repository zip file, or from the [Data Folder](https://github.com/sysbiolux/IDARE-QuickStart/tree/master/Data):  
-Proteomics.xls - Presence of the cataysing protein for the specific reaction  
+Protein Presence.xls - Presence of the cataysing protein for the specific reaction  
 External Metabolites.xls - Data for 3 external metabolites (and the biomass amount) over a period of time  
 Internal Metabolites.xls - Data for all internal metabolites at different textual stages.  
 ReactionActivity.xls - experimental and predicted activity of each reaction in the network  
@@ -20,7 +20,7 @@ In Part 3, we will split the network into parts based on compartments and pathwa
 In this example, we will set up the *E.Coli* core network for use with IDARE and add some additional annotations to the network.
 
 #### 1.1 Loading the E.Coli Core model
-After installing the IDARE app (either from the Cytoscape app store or from [here](http://idare-server.uni.lu/IDARE.jar)), load the *E.coli* core network by selecting
+After installing the IDARE app (either from the Cytoscape app store or from [here](http://idare-server.uni.lu/IDAREJars/IDARE.jar)), load the *E.coli* core network by selecting
 File -> Import -> Network -> File and select the *E.Coli* core file you downloaded.
 
 #### 1.2 Generating an initial Layout
@@ -56,8 +56,8 @@ This example assumes that you have at loaded the E.coli core network and set up 
 In the 'Control Panel', select the IDARE tab.  
 Click on 'Add Dataset'  
 In the dialog, click on 'Choose File'  
-Select "Activity.xls" and click 'open'  
-In the 'DataSet Description' field write the text: "Indication of reaction activity at different simulation phases"  
+Select "Protein Presence.xls" and click 'open'  
+In the 'DataSet Description' field write the text: "Indication of protein presence"  
 As 'DataSet Type', select 'Array Dataset' (since this dataset contains only one sheet).  
 Uncheck the 'Use two column headers' option, as we only have one header.  
 Click ok.  
