@@ -6,7 +6,7 @@ or by right-clicking on this [Link](http://systemsbiology.ucsd.edu/sites/default
 Also obtain the files in this repository for a some sample data.
 
 The following files can be downloaded via the repository zip file, or from the [Data Folder](https://github.com/sysbiolux/IDARE-QuickStart/tree/master/Data):  
-Activity.xls - Predicted activity in four different phases of the experiment  
+Proteomics.xls - Presence of the cataysing protein for the specific reaction  
 External Metabolites.xls - Data for 3 external metabolites (and the biomass amount) over a period of time  
 Internal Metabolites.xls - Data for all internal metabolites at different textual stages.  
 ReactionActivity.xls - experimental and predicted activity of each reaction in the network  
@@ -58,14 +58,14 @@ Click on 'Add Dataset'
 In the dialog, click on 'Choose File'  
 Select "Activity.xls" and click 'open'  
 In the 'DataSet Description' field write the text: "Indication of reaction activity at different simulation phases"  
-As 'DataSet Type', select 'Itemized Dataset' (since this dataset contains only one sheet).  
+As 'DataSet Type', select 'Array Dataset' (since this dataset contains only one sheet).  
 Uncheck the 'Use two column headers' option, as we only have one header.  
 Click ok.  
 
-Repeat the process with "External Metabolites.xls" and "ReactionActivity.xls" which should both be loaded as 'ValueSet Datasets'.
-Even though ReactionActivity.xls contains only one sheet, the number of datapoints is unsuitable for itemized representation. 
-Thus importing it as a 'Valueset Dataset' with one set allows it to be displayed e.g. as a graph.  
-Finally repeat the process with "Internal Metabolites.xls" which should be loaded as 'Itemized Dataset' and is a two column header file, so the checkbox has to be ticked.
+Repeat the process with "External Metabolites.xls" and "ReactionActivity.xls" which should both be loaded as 'Multiarray Dataset'.
+Even though ReactionActivity.xls contains only one sheet, the number of datapoints is unsuitable for single array representation. 
+Thus importing it as a 'Multiarray Dataset' with one set allows it to be displayed e.g. as a graph.  
+Finally repeat the process with "Internal Metabolites.xls" which should be loaded as 'Array Dataset' and is a two column header file, so the checkbox has to be ticked.
 Example descriptions would be "External Metabolite amount information" and "Reaction Activity during the experiment" and "Internal Metabolite Amounts at specific stages".
 
 ####2.2 Create the Visualisation
