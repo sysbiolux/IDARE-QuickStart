@@ -20,7 +20,7 @@ In Part 3, we will split the network into parts based on compartments and pathwa
 In this example, we will set up the *E.Coli* core network for use with IDARE and add some additional annotations to the network.
 
 #### 1.1 Loading the E.Coli Core model
-After installing the IDARE app (either from the Cytoscape app store or from [here](http://idare-server.uni.lu/IDAREJars/IDARE.jar)), load the *E.coli* core network by selecting
+After installing the IDARE app (either from the Cytoscape app store or from [here](http://idare.uni.lu/IDAREJars/IDARE.jar)), load the *E.coli* core network by selecting
 File -> Import -> Network -> File and select the *E.Coli* core file you downloaded.
 
 #### 1.2 Generating an initial Layout
