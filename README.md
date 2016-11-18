@@ -1,4 +1,4 @@
-# IDARE Example
+# IDARE Quickstart guide
 
 This Repository contains basic **artificial** sample datasets to use with the IDARE cytoscape application.
 The data can be used with the *E.coli* core network sbml file obtainable from the [Data folder](https://github.com/sysbiolux/IDARE-QuickStart/tree/master/Data), 
