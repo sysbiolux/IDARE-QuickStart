@@ -3,7 +3,7 @@
 This Repository contains basic **artificial** sample datasets to use with the IDARE cytoscape application.
 The data can be used with the *E.coli* core network sbml file obtainable from the [Data folder](https://github.com/sysbiolux/IDARE-QuickStart/tree/master/Data), 
 or by right-clicking on this [Link](https://github.com/sysbiolux/IDARE-QuickStart/blob/master/Data/ecoli_core_model.xml) and selecting "save as".
-Also obtain the excel files in this repository for a some **artificial** sample data.
+Also obtain the excel files in this repository for some **artificial** sample data.
 
 The following files can be downloaded via the repository zip file, or from the [Data Folder](https://github.com/sysbiolux/IDARE-QuickStart/tree/master/Data):  
 Protein Presence.xls - Presence of the cataysing protein for the specific reaction  
