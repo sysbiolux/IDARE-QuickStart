@@ -9,7 +9,7 @@ The following files can be downloaded via the repository zip file, or from the [
 Fold Change of Gene Expression ethanol vs no ethanol.xls - Data from Horinouchi et al. used to calculate Gene expression fold changes between untreated and ethanol treated samples  
 Metabolomics fold change treatment vs Control.xls - Data from Wang et al for Metabolomics fold changes of treatment vs control samples  
 Total relative C13 label.xls - Data from Goodarzi et al. for C13 labeling upon feeding with ethanol for a wild type and a ethanol resistant starin. The data is computed to present the total amount of labeled carbons in each metabolite.  
-Proteomics Time course of ethanol treated wild type - Fold change to 0.xls - Data from Soufi et al. epresenting the fold change to time 0 of different protein products associated with the genes in the network.  
+Proteomics Time course of ethanol treated wild type.xls - Data from Soufi et al. epresenting the fold change to time 0 of different protein products associated with the genes in the network.  
 
 The Tutorial Contains three parts.  
 In Part 1, we set up the network, which is necessary for image matching.  
