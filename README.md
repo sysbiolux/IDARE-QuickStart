@@ -1,15 +1,15 @@
 # IDARE Quickstart guide
 
-This Repository contains basic **artificial** sample datasets to use with the IDARE cytoscape application.
+This Repository contains basic sample datasets to use with the IDARE cytoscape application.
 The data can be used with the *E.coli* core network sbml file obtainable from the [Data folder](https://github.com/sysbiolux/IDARE-QuickStart/tree/master/Data), 
 or by right-clicking on this [Link](https://github.com/sysbiolux/IDARE-QuickStart/blob/master/Data/ecoli_core_model.xml) and selecting "save as".
-Also obtain the excel files in this repository for some **artificial** sample data.
+Also obtain the excel files in this repository for some sample data.
 
 The following files can be downloaded via the repository zip file, or from the [Data Folder](https://github.com/sysbiolux/IDARE-QuickStart/tree/master/Data):  
-Fold Change of Gene Expression ethanol vs no ethanol.xls - Data from Horinouchi et al. used to calculate Gene expression fold changes between untreated and ethanol treated samples  
-Metabolomics fold change treatment vs Control.xls - Data from Wang et al for Metabolomics fold changes of treatment vs control samples  
-Total relative C13 label.xls - Data from Goodarzi et al. for C13 labeling upon feeding with ethanol for a wild type and a ethanol resistant starin. The data is computed to present the total amount of labeled carbons in each metabolite.  
-Proteomics Time course of ethanol treated wild type.xls - Data from Soufi et al. epresenting the fold change to time 0 of different protein products associated with the genes in the network.  
+Fold Change of Gene Expression ethanol vs no ethanol.xls - Data from Horinouchi et al.[1] used to calculate Gene expression fold changes between untreated and ethanol treated samples  
+Metabolomics fold change treatment vs Control.xls - Data from Wang et al[2] for Metabolomics fold changes of treatment vs control samples  
+Total relative C13 label.xls - Data from Goodarzi et al.[3] for C13 labeling upon feeding with ethanol for a wild type and a ethanol resistant starin. The data is computed to present the total amount of labeled carbons in each metabolite.  
+Proteomics Time course of ethanol treated wild type.xls - Data from Soufi et al.[4] epresenting the fold change to time 0 of different protein products associated with the genes in the network.  
 
 The Tutorial Contains three parts.  
 In Part 1, we set up the network, which is necessary for image matching.  
@@ -128,6 +128,14 @@ In general, links will be generated for all networks built on the same column, t
 If you create additional subnetworks at a later stage, links to and from old networks will be created for all newly generated networks.
 
 You can see, that the labelling for ketoglutarate is much smaller than the labelling of any other measured metabolite. One potential reason is an increase in the glyoxylate shunt (visible in both the proteomics and gene expression of the enzymes involved in that pathway). 
+
+
+
+##Citations
+[1]Horinouchi T, Tamaoka K, Furusawa C, Ono N, Suzuki S, Hirasawa T, Yomo T, Shimizu H (2010) Transcriptome analysis of parallel-evolved escherichia coli strains under ethanol stress. BMC Genomics 11(1):579, , URL http://dx.doi.org/10.1186/1471-2164-11-579
+[2]Wang J, Chen L, Tian X, Gao L, Niu X, Shi M, Zhang W (2013) Global metabolomic and network analysis of escherichia coli responses to exogenous biofuels. Journal of Proteome Research 12(11):5302–5312, , URL http://dx.doi.org/10.1021/pr400640u, pMID: 24016299
+[3] Goodarzi H, Bennett BD, Amini S, Reaves ML, Hottes AK, Rabinowitz JD, Tavazoie S (2010) Regulatory and metabolic rewiring during laboratory evolution of ethanol tolerance in e. coli. Molecular Systems Biology 6(1):378–n/a, , URL http://dx.doi.org/10.1038/msb.2010.33, 378
+[4]Soufi B, Krug K, Harst A, Macek B (2015) Characterization of the e. coli proteome and its modifications during growth and ethanol stress. Frontiers in Microbiology 6:103, , URL http://journal.frontiersin.org/article/10.3389/fmicb.2015.00103
 
 
 
