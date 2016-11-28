@@ -1,46 +1,37 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en-us">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta charset="UTF-8">
     <title>IDARE-Quickstart Guide by sysbiolux</title>
-
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/github-light.css">
-    <meta name="viewport" content="width=device-width">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
   </head>
   <body>
-    <div class="wrapper">
-      <header>
-        <h1>IDARE-Quickstart Guide</h1>
-        <p></p>
+    <section class="page-header">
+      <h1 class="project-name">IDARE-Quickstart Guide</h1>
+      <h2 class="project-tagline"></h2>
+      <a href="https://github.com/sysbiolux/IDARE-QuickStart" class="btn">View on GitHub</a>
+      <a href="https://github.com/sysbiolux/IDARE-QuickStart/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/sysbiolux/IDARE-QuickStart/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
 
-        <p class="view"><a href="https://github.com/sysbiolux/IDARE-QuickStart">View the Project on GitHub <small>sysbiolux/IDARE-QuickStart</small></a></p>
-
-
-        <ul>
-          <li><a href="https://github.com/sysbiolux/IDARE-QuickStart/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/sysbiolux/IDARE-QuickStart/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/sysbiolux/IDARE-QuickStart">View On <strong>GitHub</strong></a></li>
-        </ul>
-      </header>
-      <section>
-        <h1>
+    <section class="main-content">
+      <h1>
 <a id="idare-quickstart-guide" class="anchor" href="#idare-quickstart-guide" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>IDARE Quickstart guide</h1>
 
-<p>This Repository contains basic <strong>artificial</strong> sample datasets to use with the IDARE cytoscape application.
+<p>This Repository contains basic sample datasets to use with the IDARE cytoscape application.
 The data can be used with the <em>E.coli</em> core network sbml file obtainable from the <a href="https://github.com/sysbiolux/IDARE-QuickStart/tree/master/Data">Data folder</a>, 
 or by right-clicking on this <a href="https://github.com/sysbiolux/IDARE-QuickStart/blob/master/Data/ecoli_core_model.xml">Link</a> and selecting "save as".
-Also obtain the excel files in this repository for some <strong>artificial</strong> sample data.</p>
+Also obtain the excel files in this repository for some sample data.</p>
 
 <p>The following files can be downloaded via the repository zip file, or from the <a href="https://github.com/sysbiolux/IDARE-QuickStart/tree/master/Data">Data Folder</a>:<br>
-Protein Presence.xls - Presence of the cataysing protein for the specific reaction<br>
-External Metabolites.xls - Data for 3 external metabolites (and the biomass amount) over a period of time<br>
-Internal Metabolites.xls - Data for all internal metabolites at different textual stages.<br>
-ReactionActivity.xls - experimental and predicted activity of each reaction in the network  </p>
+Fold Change of Gene Expression ethanol vs no ethanol.xls - Data from Horinouchi et al.[1] used to calculate Gene expression fold changes between untreated and ethanol treated samples<br>
+Metabolomics fold change treatment vs Control.xls - Data from Wang et al[2] for Metabolomics fold changes of treatment vs control samples<br>
+Total relative C13 label.xls - Data from Goodarzi et al.[3] for C13 labeling upon feeding with ethanol for a wild type and a ethanol resistant starin. The data is computed to present the total amount of labeled carbons in each metabolite.<br>
+Proteomics Time course of ethanol treated wild type.xls - Data from Soufi et al.[4] epresenting the fold change to time 0 of different protein products associated with the genes in the network.  </p>
 
 <p>The Tutorial Contains three parts.<br>
 In Part 1, we set up the network, which is necessary for image matching.<br>
@@ -78,7 +69,7 @@ If you are using cy3sbml please select the Base network view (it should have 187
 <h4>
 <a id="14-changing-to-the-idare-visual-style" class="anchor" href="#14-changing-to-the-idare-visual-style" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1.4 Changing to the IDARE Visual Style</h4>
 
-<p>From the 'Style' tab in the 'Control Panel' select the 'IDARE Visual Style' and apply it to the network.</p>
+<p>From the 'Style' tab in the 'Control Panel' select the 'IDARE Visual Style' and apply it to the network. Note, that the IDARE images cannot be removed from this style. If you want to use the images with another style, you can add and remove them by right-clicking in the display area, and select Apps-&gt;Add/Remove IDARE Images</p>
 
 <h4>
 <a id="15-adding-sbml-annotations-and-gene-nodes" class="anchor" href="#15-adding-sbml-annotations-and-gene-nodes" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1.5 Adding SBML Annotations and Gene Nodes</h4>
@@ -102,16 +93,16 @@ This example assumes that you have at loaded the E.coli core network and set up 
 <p>In the 'Control Panel', select the IDARE tab.<br>
 Click on 'Add Dataset'<br>
 In the dialog, click on 'Choose File'<br>
-Select "Protein Presence.xls" and click 'open'<br>
-In the 'DataSet Description' field write the text: "Indication of protein presence"<br>
+Select "Fold Change of Gene Expression ethanol vs no ethanol.xls" and click 'open'<br>
+The 'DataSet Description' field will be updated with the file name<br>
 As 'DataSet Type', select 'Array Dataset' (since this dataset contains only one sheet).<br>
-Uncheck the 'Use two column headers' option, as we only have one header.<br>
+Check the 'Use two column headers' option, as we only have one header.<br>
 Click ok.  </p>
 
-<p>Repeat the process with "External Metabolites.xls" and "ReactionActivity.xls" which should both be loaded as 'Multiarray Dataset'.
-Even though ReactionActivity.xls contains only one sheet, the number of datapoints is unsuitable for single array representation. 
-Thus importing it as a 'Multiarray Dataset' with one set allows it to be displayed e.g. as a graph.<br>
-Finally repeat the process with "Internal Metabolites.xls" which should be loaded as 'Array Dataset' and is a two column header file, so the checkbox has to be ticked.
+<p>Repeat the process with "Proteomics Time course of ethanol treated wild type.xls" and "Total relative C13 label.xls" which should both be loaded as 'Multiarray Dataset'.
+The Proteomics time course only contains one sheet, so it can be added both as multiarray and array dataset. Adding it in both versions allows the selection of additional layouts (those specific to multiarray datasets and those specific to array datasets).<br>
+Finally repeat the process with "Metabolomics fold change treatment vs Control.xls" which should be loaded as 'Array Dataset'.<br>
+The labeling data only has one column for its IDs, thus you should uncheck the box for two column headers.
 Example descriptions would be "External Metabolite amount information" and "Reaction Activity during the experiment" and "Internal Metabolite Amounts at specific stages".</p>
 
 <h4>
@@ -170,7 +161,7 @@ From the metabolites we would like to exclude currency metabolites and most cofa
 For larger networks, the pre-selection is better, but on small networks (like the e.coli core), the relative amounts of presence tend to be higher, so we have to select additional nodes to remove during the generation process.<br>
 Select M_h_c, M_h2o_c, M_atp_c, M_pi_c, M_pi_c, M_nadh_c, M_nad_c, M_adp_c, M_nadph_c, M_co2_c, M_nadp_c and M_coa_c, as metabolites to remove.  </p>
 
-<p>As pathways, we would like to create 'Glycolysis', the 'Citric Acid Cycle', 'Anaplerotic reactions' and the 'Pentose phosphate pathway'.<br>
+<p>As pathways, we would like to create 'Glycolysis', the 'Citric Acid Cycle', 'Glyoxylate Shunt' and the 'Pentose phosphate pathway'.<br>
 Click ok.  </p>
 
 <p>You can now navigate through the different pathways. If you wish to create additional pathways, select the source network again and repeat the steps.
@@ -179,13 +170,25 @@ New links will be added to the existing networks.</p>
 <p>You will notice, that links from parental networks will be included in the newly created networks, but no links are generated in these parental networks. 
 In general, links will be generated for all networks built on the same column, that share linking nodes. 
 If you create additional subnetworks at a later stage, links to and from old networks will be created for all newly generated networks.</p>
-      </section>
-      <footer>
-        <p>This project is maintained by <a href="https://github.com/sysbiolux">sysbiolux</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+
+<p>You can see, that the labelling for ketoglutarate is much smaller than the labelling of any other measured metabolite. One potential reason is an increase in the glyoxylate shunt (visible in both the proteomics and gene expression of the enzymes involved in that pathway). </p>
+
+<h2>
+<a id="citations" class="anchor" href="#citations" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Citations</h2>
+
+<p>[1]Horinouchi T, Tamaoka K, Furusawa C, Ono N, Suzuki S, Hirasawa T, Yomo T, Shimizu H (2010) Transcriptome analysis of parallel-evolved escherichia coli strains under ethanol stress. BMC Genomics 11(1):579, , URL <a href="http://dx.doi.org/10.1186/1471-2164-11-579">http://dx.doi.org/10.1186/1471-2164-11-579</a><br>
+[2]Wang J, Chen L, Tian X, Gao L, Niu X, Shi M, Zhang W (2013) Global metabolomic and network analysis of escherichia coli responses to exogenous biofuels. Journal of Proteome Research 12(11):5302–5312, , URL <a href="http://dx.doi.org/10.1021/pr400640u">http://dx.doi.org/10.1021/pr400640u</a>, pMID: 24016299<br>
+[3] Goodarzi H, Bennett BD, Amini S, Reaves ML, Hottes AK, Rabinowitz JD, Tavazoie S (2010) Regulatory and metabolic rewiring during laboratory evolution of ethanol tolerance in e. coli. Molecular Systems Biology 6(1):378–n/a, , URL <a href="http://dx.doi.org/10.1038/msb.2010.33">http://dx.doi.org/10.1038/msb.2010.33</a>, 378<br>
+[4]Soufi B, Krug K, Harst A, Macek B (2015) Characterization of the e. coli proteome and its modifications during growth and ethanol stress. Frontiers in Microbiology 6:103, , URL <a href="http://journal.frontiersin.org/article/10.3389/fmicb.2015.00103">http://journal.frontiersin.org/article/10.3389/fmicb.2015.00103</a>  </p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/sysbiolux/IDARE-QuickStart">IDARE-Quickstart Guide</a> is maintained by <a href="https://github.com/sysbiolux">sysbiolux</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
       </footer>
-    </div>
-    <script src="javascripts/scale.fix.js"></script>
-    
+
+    </section>
+
+  
   </body>
 </html>
