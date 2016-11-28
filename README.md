@@ -1,9 +1,9 @@
-# IDARE Example
+# IDARE Quickstart guide
 
 This Repository contains basic **artificial** sample datasets to use with the IDARE cytoscape application.
 The data can be used with the *E.coli* core network sbml file obtainable from the [Data folder](https://github.com/sysbiolux/IDARE-QuickStart/tree/master/Data), 
 or by right-clicking on this [Link](https://github.com/sysbiolux/IDARE-QuickStart/blob/master/Data/ecoli_core_model.xml) and selecting "save as".
-Also obtain the excel files in this repository for a some **artificial** sample data.
+Also obtain the excel files in this repository for some **artificial** sample data.
 
 The following files can be downloaded via the repository zip file, or from the [Data Folder](https://github.com/sysbiolux/IDARE-QuickStart/tree/master/Data):  
 Fold Change of Gene Expression ethanol vs no ethanol.xls - Data from Horinouchi et al. used to calculate Gene expression fold changes between untreated and ethanol treated samples  
@@ -20,7 +20,7 @@ In Part 3, we will split the network into parts based on compartments and pathwa
 In this example, we will set up the *E.Coli* core network for use with IDARE and add some additional annotations to the network.
 
 #### 1.1 Loading the E.Coli Core model
-After installing the IDARE app (either from the Cytoscape app store or from [here](http://idare-server.uni.lu/IDAREJars/IDARE.jar)), load the *E.coli* core network by selecting
+After installing the IDARE app (either from the Cytoscape app store or from [here](http://idare.uni.lu/IDAREJars/IDARE.jar)), load the *E.coli* core network by selecting
 File -> Import -> Network -> File and select the *E.Coli* core file you downloaded.
 
 #### 1.2 Generating an initial Layout
