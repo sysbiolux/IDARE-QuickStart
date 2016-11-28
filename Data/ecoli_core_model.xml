@@ -1811,7 +1811,7 @@
       </reaction>
       <reaction id="R_ICL" name="Isocitrate lyase" reversible="false">
         <notes>
-          <body xmlns="http://www.w3.org/1999/xhtml"><p>GENE_ASSOCIATION: b4015</p><p>GENE_LIST: b4015</p><p>SUBSYSTEM: Anaplerotic reactions</p></body>
+          <body xmlns="http://www.w3.org/1999/xhtml"><p>GENE_ASSOCIATION: b4015</p><p>GENE_LIST: b4015</p><p>SUBSYSTEM: Glyoxylate Shunt</p></body>
         </notes>
         <listOfReactants>
           <speciesReference species="M_icit_c"/>
@@ -1859,7 +1859,7 @@
       </reaction>
       <reaction id="R_MALS" name="malate synthase" reversible="false">
         <notes>
-          <body xmlns="http://www.w3.org/1999/xhtml"><p>GENE_ASSOCIATION: ( b4014  or  b2976 )</p><p>GENE_LIST: b2976 b4014</p><p>SUBSYSTEM: Anaplerotic reactions</p></body>
+          <body xmlns="http://www.w3.org/1999/xhtml"><p>GENE_ASSOCIATION: ( b4014  or  b2976 )</p><p>GENE_LIST: b2976 b4014</p><p>SUBSYSTEM: Glyoxylate Shunt</p></body>
         </notes>
         <listOfReactants>
           <speciesReference species="M_accoa_c"/>

@@ -6,10 +6,10 @@ or by right-clicking on this [Link](https://github.com/sysbiolux/IDARE-QuickStar
 Also obtain the excel files in this repository for a some **artificial** sample data.
 
 The following files can be downloaded via the repository zip file, or from the [Data Folder](https://github.com/sysbiolux/IDARE-QuickStart/tree/master/Data):  
-Protein Presence.xls - Presence of the cataysing protein for the specific reaction  
-External Metabolites.xls - Data for 3 external metabolites (and the biomass amount) over a period of time  
-Internal Metabolites.xls - Data for all internal metabolites at different textual stages.  
-ReactionActivity.xls - experimental and predicted activity of each reaction in the network  
+Fold Change of Gene Expression ethanol vs no ethanol.xls - Data from Horinouchi et al. used to calculate Gene expression fold changes between untreated and ethanol treated samples  
+Metabolomics fold change treatment vs Control.xls - Data from Wang et al for Metabolomics fold changes of treatment vs control samples  
+Total relative C13 label.xls - Data from Goodarzi et al. for C13 labeling upon feeding with ethanol for a wild type and a ethanol resistant starin. The data is computed to present the total amount of labeled carbons in each metabolite.  
+Proteomics Time course of ethanol treated wild type - Fold change to 0.xls - Data from Soufi et al. epresenting the fold change to time 0 of different protein products associated with the genes in the network.  
 
 The Tutorial Contains three parts.  
 In Part 1, we set up the network, which is necessary for image matching.  
@@ -38,7 +38,7 @@ Check the 'Overwrite existing values' checkbox.
 If you are using cy3sbml please select the Base network view (it should have 187 nodes and 380 edges).
 
 #### 1.4 Changing to the IDARE Visual Style
-From the 'Style' tab in the 'Control Panel' select the 'IDARE Visual Style' and apply it to the network.
+From the 'Style' tab in the 'Control Panel' select the 'IDARE Visual Style' and apply it to the network. Note, that the IDARE images cannot be removed from this style. If you want to use the images with another style, you can add and remove them by right-clicking in the display area, and select Apps->Add/Remove IDARE Images
 
 #### 1.5 Adding SBML Annotations and Gene Nodes
 Right click on some empty space in the network view.  
@@ -57,16 +57,16 @@ This example assumes that you have at loaded the E.coli core network and set up 
 In the 'Control Panel', select the IDARE tab.  
 Click on 'Add Dataset'  
 In the dialog, click on 'Choose File'  
-Select "Protein Presence.xls" and click 'open'  
-In the 'DataSet Description' field write the text: "Indication of protein presence"  
+Select "Fold Change of Gene Expression ethanol vs no ethanol.xls" and click 'open'  
+The 'DataSet Description' field will be updated with the file name  
 As 'DataSet Type', select 'Array Dataset' (since this dataset contains only one sheet).  
-Uncheck the 'Use two column headers' option, as we only have one header.  
+Check the 'Use two column headers' option, as we only have one header.  
 Click ok.  
 
-Repeat the process with "External Metabolites.xls" and "ReactionActivity.xls" which should both be loaded as 'Multiarray Dataset'.
-Even though ReactionActivity.xls contains only one sheet, the number of datapoints is unsuitable for single array representation. 
-Thus importing it as a 'Multiarray Dataset' with one set allows it to be displayed e.g. as a graph.  
-Finally repeat the process with "Internal Metabolites.xls" which should be loaded as 'Array Dataset' and is a two column header file, so the checkbox has to be ticked.
+Repeat the process with "Proteomics Time course of ethanol treated wild type.xls" and "Total relative C13 label.xls" which should both be loaded as 'Multiarray Dataset'.
+The Proteomics time course only contains one sheet, so it can be added both as multiarray and array dataset. Adding it in both versions allows the selection of additional layouts (those specific to multiarray datasets and those specific to array datasets).  
+Finally repeat the process with "Metabolomics fold change treatment vs Control.xls" which should be loaded as 'Array Dataset'.  
+The labeling data only has one column for its IDs, thus you should uncheck the box for two column headers.
 Example descriptions would be "External Metabolite amount information" and "Reaction Activity during the experiment" and "Internal Metabolite Amounts at specific stages".
 
 ####2.2 Create the Visualisation
@@ -117,7 +117,7 @@ From the metabolites we would like to exclude currency metabolites and most cofa
 For larger networks, the pre-selection is better, but on small networks (like the e.coli core), the relative amounts of presence tend to be higher, so we have to select additional nodes to remove during the generation process.  
 Select M\_h\_c, M\_h2o\_c, M\_atp\_c, M\_pi\_c, M\_pi\_c, M\_nadh\_c, M\_nad\_c, M\_adp\_c, M\_nadph\_c, M\_co2\_c, M\_nadp\_c and M\_coa\_c, as metabolites to remove.  
 
-As pathways, we would like to create 'Glycolysis', the 'Citric Acid Cycle', 'Anaplerotic reactions' and the 'Pentose phosphate pathway'.  
+As pathways, we would like to create 'Glycolysis', the 'Citric Acid Cycle', 'Glyoxylate Shunt' and the 'Pentose phosphate pathway'.  
 Click ok.  
 
 You can now navigate through the different pathways. If you wish to create additional pathways, select the source network again and repeat the steps.
@@ -127,6 +127,7 @@ You will notice, that links from parental networks will be included in the newly
 In general, links will be generated for all networks built on the same column, that share linking nodes. 
 If you create additional subnetworks at a later stage, links to and from old networks will be created for all newly generated networks.
 
+You can see, that the labelling for ketoglutarate is much smaller than the labelling of any other measured metabolite. One potential reason is an increase in the glyoxylate shunt (visible in both the proteomics and gene expression of the enzymes involved in that pathway). 
 
 
 
