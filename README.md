@@ -89,6 +89,7 @@ For the second step, it is necessary to have the SBML annotations added to the n
 You can add the sbml annotation to the Cytosol network (C_c) after step 1 of this example, but this would lead to gene nodes not being added in the external compartment subnetwork.
 
 ####3.1 Create Networks for the External compartment and the cytosol
+NOTE: If you want to recreate Figure 4 of the Paper, skip the creation of the Compartment subnetworks, as they were not created for that figure.  
 We first want to split the network at the transporters which translocate metabolites from the external compartment to the cytosol, and vice versa.  
 To do so:  
 Select 'Apps' -> 'IDARE' -> 'Create Subnetworks'  
