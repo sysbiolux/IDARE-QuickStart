@@ -49,11 +49,11 @@ You will notice, that additional nodes have been created, which represent the pr
 If the SBML contains enzyme species (annotated by the "isEncodedBy" bio qualifier), you would be asked which labeling pattern (i.e. database) to use for the genes and proteins.
 
 
-##Part2: Automated image generation and loading images to the Network.
+## Part2: Automated image generation and loading images to the Network.
 In this example you will generate a few images based on artificial data and map it to the previously created and initialized network.
 This example assumes that you have at loaded the E.coli core network and set up the network for IDARE (Steps 1 and 3 of the previous example).
 
-####Load Data into IDARE
+#### Load Data into IDARE
 In the 'Control Panel', select the IDARE tab.  
 Click on 'Add Dataset'  
 In the dialog, click on 'Choose File'  
@@ -69,7 +69,7 @@ Finally repeat the process with "Metabolomics fold change treatment vs Control.x
 The labeling data only has one column for its IDs, thus you should uncheck the box for two column headers.
 Example descriptions would be "External Metabolite amount information" and "Reaction Activity during the experiment" and "Internal Metabolite Amounts at specific stages".
 
-####2.2 Create the Visualisation
+#### 2.2 Create the Visualisation
 You can now select individual datasets you want to visualize. 
 To do so, choose a selection of datasets from the table by ticking the "selected" boxes.  
 In the lower left corner, (below the 'Create' and 'Preview' buttons) are indicators, how many nodes the datasets represent in total and how many shared nodes the selection contains.  
@@ -77,18 +77,18 @@ When creating visualisations for multiple datasets at once, there should be an o
 However, you can of course create multiple different nodes by selecting different sets of data.
 Images will only be created for nodes which are part of a selected dataset and old images will be kept unless a new image is created for the node.
 
-####2.3 Adding IDARE images to other Styles
+#### 2.3 Adding IDARE images to other Styles
 If you did not select the IDARE visual style, but want to use a different style for your network, you can do so by right-clicking anywhere in a network view using the style you want to add your nodes to.
 Select 'Apps' -> 'Add IDARE Images'. Now the images will be shown for your choosen style.
 
 
-##Part3: Subnetwork Generation
+## Part3: Subnetwork Generation
 
 The first step of this this Example is independent on the first 2 Examples.
 For the second step, it is necessary to have the SBML annotations added to the network (step 1.5), as otherwise the corresponding table column does not exist.
 You can add the sbml annotation to the Cytosol network (C_c) after step 1 of this example, but this would lead to gene nodes not being added in the external compartment subnetwork.
 
-####3.1 Create Networks for the External compartment and the cytosol
+#### 3.1 Create Networks for the External compartment and the cytosol
 NOTE: If you want to recreate Figure 4 of the Paper, skip the creation of the Compartment subnetworks, as they were not created for that figure.  
 We first want to split the network at the transporters which translocate metabolites from the external compartment to the cytosol, and vice versa.  
 To do so:  
@@ -108,7 +108,7 @@ We leave the 'Keep Layout' option as it is and select remove for the Biomass rea
 We also select C\_c, the cytosol, and C\_e, the external medium, in the sub-networks to be generated table.   
 If we now click on the "network" tab in the 'Control Panel' we will see two new networks that were generated.   
 
-####3.2 Create pathway networks in the Cytosol
+#### 3.2 Create pathway networks in the Cytosol
 There is not much to see in the external compartment, as it only contains the transporters and the cytosol is still a hairball. 
 To get a better overview, we would like to generate pathway networks in the cytosol.  
 To do so, again, select 'Apps' -> 'SubNetworkGenerator'  
@@ -132,7 +132,7 @@ You can see, that the labelling for ketoglutarate is much smaller than the label
 
 
 
-##Citations
+## Citations
 [1]Horinouchi T, Tamaoka K, Furusawa C, Ono N, Suzuki S, Hirasawa T, Yomo T, Shimizu H (2010) Transcriptome analysis of parallel-evolved escherichia coli strains under ethanol stress. BMC Genomics 11(1):579, , URL http://dx.doi.org/10.1186/1471-2164-11-579  
 [2]Wang J, Chen L, Tian X, Gao L, Niu X, Shi M, Zhang W (2013) Global metabolomic and network analysis of escherichia coli responses to exogenous biofuels. Journal of Proteome Research 12(11):5302–5312, , URL http://dx.doi.org/10.1021/pr400640u, pMID: 24016299  
 [3] Goodarzi H, Bennett BD, Amini S, Reaves ML, Hottes AK, Rabinowitz JD, Tavazoie S (2010) Regulatory and metabolic rewiring during laboratory evolution of ethanol tolerance in e. coli. Molecular Systems Biology 6(1):378–n/a, , URL http://dx.doi.org/10.1038/msb.2010.33, 378  
