@@ -62,11 +62,10 @@ The 'DataSet Description' field will be updated with the file name
 As 'DataSet Type', select 'Array Dataset' (since this dataset contains only one sheet).  
 Check the 'Use two column headers' option, as we only have one header.  
 Click ok.  
-
+Repeat the process with "Metabolomics fold change treatment vs Control.xls".
 Repeat the process with "Proteomics Time course of ethanol treated wild type.xls" and "Total relative C13 label.xls" which should both be loaded as 'Multiarray Dataset'.
+In addition, the Labeling data does only have one header column, so you need to uncheck the box for two column headers.
 The Proteomics time course only contains one sheet, so it can be added both as multiarray and array dataset. Adding it in both versions allows the selection of additional layouts (those specific to multiarray datasets and those specific to array datasets).  
-Finally repeat the process with "Metabolomics fold change treatment vs Control.xls" which should be loaded as 'Array Dataset'.  
-The labeling data only has one column for its IDs, thus you should uncheck the box for two column headers.
 Example descriptions would be "External Metabolite amount information" and "Reaction Activity during the experiment" and "Internal Metabolite Amounts at specific stages".
 
 #### 2.2 Create the Visualisation
