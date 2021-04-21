@@ -5,9 +5,9 @@ The data and models used in the examples are in the [Data folder](https://github
  
 The Tutorial contains three parts.
 
-Part 1 is an example with the E. coli metabolic model.
+Part 1 is an example with the E. coli metabolic model overlayed with metabolomic, proteomic and gene expression data.
 
-Part 2 is an example with the Zebrafish metabolic model.
+Part 2 is an example with the Zebrafish metabolic model and gene expression data from 3 pancreatic cell types.
 
 Part 3 is an example with the Human metabolic model (Recon2) with an automated representation of the visualization from the original IDARE webportal.
 
