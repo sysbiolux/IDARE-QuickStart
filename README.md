@@ -184,10 +184,7 @@ Load the zebrafish network by selecting:
 
 File --> Import --> Network --> Network from File and select the zebrafish file you downloaded.
 
-#### 1.2 Generating an initial Layout
-From the Layout menu, select a layout you want to apply (for this tutorial we assume, that the **y-Files organic layout** was choosen, or no additional layout if you have cy3sbml installed).
-
-#### 1.3 Setting up the Network for IDARE
+#### 1.2 Setting up the Network for IDARE
 
 Right click on some empty space in the network view.
 
@@ -199,7 +196,7 @@ As compound node value select species, and as interaction node value select reac
 Check the 'Overwrite existing values' checkbox.  
 If you are using cy3sbml please select the Base network view (it should have *XXX* nodes and *XXX* edges).
 
-#### 1.4 Changing to the IDARE Visual Style
+#### 1.3 Changing to the IDARE Visual Style
 From the 'Style' tab in the 'Control Panel' select the 'IDARE Visual Style' and apply it to the network. 
 
 Note, that the IDARE images cannot be removed from this style. 
@@ -207,7 +204,7 @@ Note, that the IDARE images cannot be removed from this style.
 If you want to use the images with another style, you can add and remove them by right-clicking in the display area, and select 
 Apps --> Add/Remove IDARE Images
 
-#### 1.5 Adding SBML Annotations and Gene Nodes
+#### 1.4 Adding SBML Annotations and Gene Nodes
 Right click on some empty space in the network view.  
 Select 'Apps' --> 'Add SBML Annotations'
 
@@ -254,7 +251,7 @@ Select 'Apps' --> 'Add IDARE Images'. Now the images will be shown for your choo
 ## Part3: Subnetwork Generation
 
 The first step of this part is independent of the first 2 parts.
-For the second step, it is necessary to have the SBML annotations added to the network (step 1.5), as otherwise the corresponding table column does not exist.
+For the second step, it is necessary to have the SBML annotations added to the network (step 1.4), as otherwise the corresponding table column does not exist.
 You can add the sbml annotation to the Cytosol network (C_c) after step 1 of this example, but this would lead to gene nodes not being added in the external compartment subnetwork.
 
 #### 3.1 Create Networks for the External compartment and the cytosol
