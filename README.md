@@ -68,7 +68,7 @@ Select the *E.Coli* core network file again.
 If you have cy3sbml this step is not necessary, as IDARE will automatically use the SBML structure provided by cy3sbml for the network.  
 You will be asked, whether you want to add Gene Nodes. Tick the box (if not done already) and click Ok.
 
-You will notice, that additional nodes have been created, which represent the protein and gene nodes that were created. Proteins are created for all conjunctive GPR clauses (i.e. all possible and combinations that fulfil a GPR).  
+You will notice, that additional nodes have been created, which represent the protein and gene nodes that were created. Proteins are created for all conjunctive GPR clauses (i.e. all possible and combinations that fulfill a GPR).  
 If the SBML contains enzyme species (annotated by the "isEncodedBy" bio qualifier), you would be asked which labeling pattern (i.e. database) to use for the genes and proteins.
 
 
@@ -208,17 +208,16 @@ Apps --> Add/Remove IDARE Images
 Right click on some empty space in the network view.  
 Select 'Apps' --> 'Add SBML Annotations'
 
-Select the zebrafish network file again. 
-If you have cy3sbml this step is not necessary, as IDARE will automatically use the SBML structure provided by cy3sbml for the network.  
+Tick the boxes for "Should FBC nodes and edges be removed" and "Do you want to generate gene and Protein nodes?" and click 'OK'.
 You will be asked, whether you want to add Gene Nodes. Tick the box (if not done already) and click Ok.
 
-You will notice, that additional nodes have been created, which represent the protein and gene nodes that were created. Proteins are created for all conjunctive GPR clauses (i.e. all possible and combinations that fulfil a GPR).  
+You will notice that additional nodes and edges have been created (total of 10331 nodes and 30032 edges), which represent the protein and gene nodes that were created. Proteins are created for all conjunctive GPR clauses (i.e. all possible and combinations that fulfill a GPR).  
 If the SBML contains enzyme species (annotated by the "isEncodedBy" bio qualifier), you would be asked which labeling pattern (i.e. database) to use for the genes and proteins.
 
 
 ## Part2: Automated image generation and loading images to the Network.
-In this example you will generate a few images based on artificial data and map it to the previously created and initialized network.
-This example assumes that you have at loaded the E.coli core network and set up the network for IDARE (Steps 1 and 3 of the previous example).
+In this part you will generate a images based on RNA-seq data and map them to the previously created and initialized network.
+This part assumes you have loaded the zebrafish model and set up the network for IDARE (see Part 1 before).
 
 #### Load Data into IDARE
 In the 'Control Panel', select the IDARE tab. 
@@ -241,7 +240,10 @@ Click ok.
 
 Tick the box to 'Select' the dataset. 
 In the lower left corner, (below the 'Create' and 'Preview' buttons) are indicators, how many nodes the datasets represent in total and how many shared nodes the selection contains.  
-...
+
+Click on 'Preview Visualization' to see an example node and legend and adjust adjust the Visualization Type to the most suitable.
+Once done, click on 'Create Visualization' to display the images onto the network. You may need to zoom in several times to see the images on the gene nodes.
+
 
 #### 2.3 Adding IDARE images to other Styles
 If you did not select the IDARE visual style, but want to use a different style for your network, you can do so by right-clicking anywhere in a network view using the style you want to add your nodes to.
@@ -250,22 +252,29 @@ Select 'Apps' --> 'Add IDARE Images'. Now the images will be shown for your choo
 
 ## Part3: Subnetwork Generation
 
-The first step of this part is independent of the first 2 parts.
-For the second step, it is necessary to have the SBML annotations added to the network (step 1.4), as otherwise the corresponding table column does not exist.
-You can add the sbml annotation to the Cytosol network (C_c) after step 1 of this example, but this would lead to gene nodes not being added in the external compartment subnetwork.
+The zebrafish model does not contain info on the subsystems (pathways) reactions belongs to.
+This info is needed to generate subnetworks based on pathways and can be loaded into Cytoscape (File --> Import --> Table from File).
+For doing so, we use a csv file "ZFmodel_subsys_check.csv" (available in the [Zebrafish Data folder](https://github.com/sysbiolux/IDARE-QuickStart/tree/master/Data/zebrafish)), which contains reaction IDs in the first columns (mathcing those used in the model) and the pathways they belong to in the second column.
 
-#### 3.1 Create Networks for the External compartment and the cytosol
-NOTE: If you want to recreate Figure 4 of the Paper, skip the creation of the Compartment subnetworks, as they were not created for that figure.  
-We first want to split the network at the transporters which translocate metabolites from the external compartment to the cytosol, and vice versa.  
-To do so:  
+Choose 'sbml id' as 'Key Column for Network' and click 'OK'.
+
+
+as a data table first step of this part is independent of the first 2 parts.
+For the second step, it is necessary to have the SBML annotations added to the network (step 1.4), as otherwise the corresponding table column does not exist.
+
+#### 3.1 Create subnetworks
+
 Select 'Apps' --> 'IDARE' --> 'Create Subnetworks'  
 or  
 Right Click in an empty space in the network you want to create subnetworks in --> 'Apps' --> 'Create Subnetworks'  
+
 In the resulting dialog, you can select the column to determine the node types as well as the node names.  
-If the network is set up for IDARE (see Part 1), appropriate columns are chosen automatically (i.e. if you have set up the network for idare - Step 1.3 - you can just accept the selection) .  
+If the network is set up for IDARE (see Part 1), appropriate columns are chosen automatically (i.e. if you have set up the network for IDARE - Step 1.3 - you can just accept the selection).  
 You further have to choose a value for nodes which form the branching points between subnetworks, and a value for nodes that form the "base" of the subnetwork.
-Since the aim is to branch at the transporters between compartments reactions will be used as branching nodes and species as subnetwork nodes.   
+
+Select reactions as branching nodes and species/reactions as subnetwork nodes.   
 Click accept, when you finished the selection.  
+
 In the next dialog, you can select the column that contains the subnetwork identifiers as well as the type of layout that should be used for the subnetwork (or the "keep layout" option, if the current layout shoudl be kept)
 The table allows you to select nodes, which should not branch and those which should be removed entirely  (e.g. nodes with too many connections).   
 Depending on the network size some nodes are already suggested by the tool.  
