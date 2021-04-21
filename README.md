@@ -33,7 +33,7 @@ Sample data:
 In this example, we will set up the *E.Coli* core network for use with IDARE and add some additional annotations to the network.
 
 #### 1.1 Loading the E.Coli Core model
-After installing the IDARE app (either from the Cytoscape app store or from [here](http://idare.uni.lu/IDAREJars/IDARE.jar)), load the *E.coli* core network by selecting:
+After installing the IDARE app (either from the Cytoscape app store or from [here](https://github.com/sysbiolux/IDARE/releases/download/2.0/IDARE-2.0.jar)), load the *E.coli* core network by selecting:
 
 File --> Import --> Network --> Network from File and select the *E.Coli* core file you downloaded.
 
