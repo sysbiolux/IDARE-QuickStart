@@ -11,10 +11,17 @@ Metabolomics fold change treatment vs Control.xls - Data from Wang et al[2] for 
 Total relative C13 label.xls - Data from Goodarzi et al.[3] for C13 labeling upon feeding with ethanol for a wild type and a ethanol resistant starin. The data is computed to present the total amount of labeled carbons in each metabolite.  
 Proteomics Time course of ethanol treated wild type.xls - Data from Soufi et al.[4] epresenting the fold change to time 0 of different protein products associated with the genes in the network.  
 
-The Tutorial Contains three parts.  
-In Part 1, we set up the network, which is necessary for image matching.  
-In Part 2, we add images based on the data to the network.  
-In Part 3, we will split the network into parts based on compartments and pathways.  
+The Tutorial Contains three parts.
+Part 1 is an example with the E. coli metabolic model.
+Part 2 is an example with the Zebrafish metabolic model.
+Part 3 is an example with the Human metabolic model (Recon2) with an automated representation of the visualization from the original IDARE webportal.
+
+In each case, the following 3 steps are recommended:
+1) setting up the network, which is necessary for image matching.  
+2) adding images based on the data to the network.  
+3) split the network into parts based on compartments and pathways.  
+
+# Example 1: overlaying multiple omics data onto the E. coli metabolic model
 
 ## Part 1: Setting up the Network for IDARE in Cytoscape
 In this example, we will set up the *E.Coli* core network for use with IDARE and add some additional annotations to the network.
@@ -128,7 +135,9 @@ If you create additional subnetworks at a later stage, links to and from old net
 
 You can see, that the labelling for ketoglutarate is much smaller than the labelling of any other measured metabolite. One potential reason is an increase in the glyoxylate shunt (visible in both the proteomics and gene expression of the enzymes involved in that pathway). 
 
+# Example 2: visualizing RNA-seq data from pancreatic cell types onto the Zebrafish metabolic model
 
+# Example 3: integrated data nodes of regulation during human adipocyte differentiation (automated generation of the original IDARE visualization)
 
 ## Citations
 [1]Horinouchi T, Tamaoka K, Furusawa C, Ono N, Suzuki S, Hirasawa T, Yomo T, Shimizu H (2010) Transcriptome analysis of parallel-evolved escherichia coli strains under ethanol stress. BMC Genomics 11(1):579, , URL http://dx.doi.org/10.1186/1471-2164-11-579  
