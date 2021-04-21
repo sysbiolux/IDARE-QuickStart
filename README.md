@@ -1,16 +1,8 @@
 # IDARE Quickstart guide
 
 This Repository contains basic sample datasets to use with the IDARE cytoscape application.
-The data can be used with the *E.coli* core network sbml file obtainable from the [Data folder](https://github.com/sysbiolux/IDARE-QuickStart/tree/master/Data), 
-or by right-clicking on this [Link](https://raw.githubusercontent.com/sysbiolux/IDARE-QuickStart/master/Data/ecoli_core_model.xml) and selecting "save as".
-Also obtain the excel files in this repository for some sample data.
-
-The following files can be downloaded via the repository zip file, or from the [Data Folder](https://github.com/sysbiolux/IDARE-QuickStart/tree/master/Data):  
-Fold Change of Gene Expression ethanol vs no ethanol.xls - Data from Horinouchi et al.[1] used to calculate Gene expression fold changes between untreated and ethanol treated samples  
-Metabolomics fold change treatment vs Control.xls - Data from Wang et al[2] for Metabolomics fold changes of treatment vs control samples  
-Total relative C13 label.xls - Data from Goodarzi et al.[3] for C13 labeling upon feeding with ethanol for a wild type and a ethanol resistant starin. The data is computed to present the total amount of labeled carbons in each metabolite.  
-Proteomics Time course of ethanol treated wild type.xls - Data from Soufi et al.[4] epresenting the fold change to time 0 of different protein products associated with the genes in the network.  
-
+The data and models used in the examples are in the [Data folder](https://github.com/sysbiolux/IDARE-QuickStart/tree/master/Data).
+ 
 The Tutorial Contains three parts.
 
 Part 1 is an example with the E. coli metabolic model.
@@ -26,19 +18,31 @@ In each case, the following 3 steps are recommended:
 
 # Example 1: overlaying multiple omics data onto the E. coli metabolic model
 
+You can get the model and sample data in the [E.coli Data folder](https://github.com/sysbiolux/IDARE-QuickStart/tree/master/Data/ecoli)
+You can also get the model by right-clicking on this [Link](https://github.com/sysbiolux/IDARE-QuickStart/tree/master/Data/ecoli/ecoli_core_model.xml) and selecting "save as".
+
+Sample data:
+-"Fold Change of Gene Expression ethanol vs no ethanol.xls" - Data from Horinouchi et al.[1] used to calculate Gene expression fold changes between untreated and ethanol treated samples  
+-"Metabolomics fold change treatment vs Control.xls" - Data from Wang et al[2] for Metabolomics fold changes of treatment vs control samples  
+-"Total relative C13 label.xls" - Data from Goodarzi et al.[3] for C13 labeling upon feeding with ethanol for a wild type and a ethanol resistant starin. The data is computed to present the total amount of labeled carbons in each metabolite.  
+-"Proteomics Time course of ethanol treated wild type.xls" - Data from Soufi et al.[4] epresenting the fold change to time 0 of different protein products associated with the genes in the network.  
+
+
 ## Part 1: Setting up the Network for IDARE in Cytoscape
 In this example, we will set up the *E.Coli* core network for use with IDARE and add some additional annotations to the network.
 
 #### 1.1 Loading the E.Coli Core model
-After installing the IDARE app (either from the Cytoscape app store or from [here](http://idare.uni.lu/IDAREJars/IDARE.jar)), load the *E.coli* core network by selecting
-File -> Import -> Network -> File and select the *E.Coli* core file you downloaded.
+After installing the IDARE app (either from the Cytoscape app store or from [here](http://idare.uni.lu/IDAREJars/IDARE.jar)), load the *E.coli* core network by selecting:
+
+File --> Import --> Network --> File and select the *E.Coli* core file you downloaded.
 
 #### 1.2 Generating an initial Layout
 From the Layout menu, select a layout you want to apply (for this tutorial we assume, that the **y-Files organic layout** was choosen, or no additional layout if you have cy3sbml installed).
 
 #### 1.3 Setting up the Network for IDARE
 
-Right click on some empty space in the network view.  
+Right click on some empty space in the network view.
+
 Select 'Apps' -> 'Setup Network For IDARE'  
 A popup will appear that lets you select the properties to be used in IDARE.  
 On the left you can select the columns you want to use for the setup. On the right, depending on your choice of columns, you can select the values to be used for compound and interaction.  
