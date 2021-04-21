@@ -18,10 +18,11 @@ In each case, the following 3 steps are recommended:
 
 # Example 1: overlaying multiple omics data onto the E. coli metabolic model
 
-You can get the model and sample data in the [E.coli Data folder](https://github.com/sysbiolux/IDARE-QuickStart/tree/master/Data/ecoli)
+You can get the model and sample data in the [*E.Coli* Data folder](https://github.com/sysbiolux/IDARE-QuickStart/tree/master/Data/ecoli)
 You can also get the model by right-clicking on this [Link](https://github.com/sysbiolux/IDARE-QuickStart/tree/master/Data/ecoli/ecoli_core_model.xml) and selecting "save as".
 
 Sample data:
+
 -"Fold Change of Gene Expression ethanol vs no ethanol.xls" - Data from Horinouchi et al.[1] used to calculate Gene expression fold changes between untreated and ethanol treated samples  
 -"Metabolomics fold change treatment vs Control.xls" - Data from Wang et al[2] for Metabolomics fold changes of treatment vs control samples  
 -"Total relative C13 label.xls" - Data from Goodarzi et al.[3] for C13 labeling upon feeding with ethanol for a wild type and a ethanol resistant starin. The data is computed to present the total amount of labeled carbons in each metabolite.  
@@ -34,7 +35,7 @@ In this example, we will set up the *E.Coli* core network for use with IDARE and
 #### 1.1 Loading the E.Coli Core model
 After installing the IDARE app (either from the Cytoscape app store or from [here](http://idare.uni.lu/IDAREJars/IDARE.jar)), load the *E.coli* core network by selecting:
 
-File --> Import --> Network --> File and select the *E.Coli* core file you downloaded.
+File --> Import --> Network --> Network from File and select the *E.Coli* core file you downloaded.
 
 #### 1.2 Generating an initial Layout
 From the Layout menu, select a layout you want to apply (for this tutorial we assume, that the **y-Files organic layout** was choosen, or no additional layout if you have cy3sbml installed).
@@ -43,7 +44,7 @@ From the Layout menu, select a layout you want to apply (for this tutorial we as
 
 Right click on some empty space in the network view.
 
-Select 'Apps' -> 'Setup Network For IDARE'  
+Select 'Apps' --> IDARE --> 'Setup Network For IDARE'  
 A popup will appear that lets you select the properties to be used in IDARE.  
 On the left you can select the columns you want to use for the setup. On the right, depending on your choice of columns, you can select the values to be used for compound and interaction.  
 Select the sbml type column as column to determine node types and the sbml id column as column to determine the node names.  
@@ -52,13 +53,21 @@ Check the 'Overwrite existing values' checkbox.
 If you are using cy3sbml please select the Base network view (it should have 187 nodes and 380 edges).
 
 #### 1.4 Changing to the IDARE Visual Style
-From the 'Style' tab in the 'Control Panel' select the 'IDARE Visual Style' and apply it to the network. Note, that the IDARE images cannot be removed from this style. If you want to use the images with another style, you can add and remove them by right-clicking in the display area, and select Apps->Add/Remove IDARE Images
+From the 'Style' tab in the 'Control Panel' select the 'IDARE Visual Style' and apply it to the network. 
+
+Note, that the IDARE images cannot be removed from this style. 
+
+If you want to use the images with another style, you can add and remove them by right-clicking in the display area, and select 
+Apps --> Add/Remove IDARE Images
 
 #### 1.5 Adding SBML Annotations and Gene Nodes
 Right click on some empty space in the network view.  
-Select 'Apps' -> 'Add SBML Annotations'  
-Select the *E.Coli* core network file again. If you have cy3sbml this step is not necessary, as IDARE will automatically use the SBML structure provided by cy3sbml for the network.  
-You will be asked, whether you want to add Gene Nodes. Tick the box (if not done already) and click Ok.  
+Select 'Apps' --> 'Add SBML Annotations'
+
+Select the *E.Coli* core network file again. 
+If you have cy3sbml this step is not necessary, as IDARE will automatically use the SBML structure provided by cy3sbml for the network.  
+You will be asked, whether you want to add Gene Nodes. Tick the box (if not done already) and click Ok.
+
 You will notice, that additional nodes have been created, which represent the protein and gene nodes that were created. Proteins are created for all conjunctive GPR clauses (i.e. all possible and combinations that fulfil a GPR).  
 If the SBML contains enzyme species (annotated by the "isEncodedBy" bio qualifier), you would be asked which labeling pattern (i.e. database) to use for the genes and proteins.
 
@@ -68,17 +77,31 @@ In this example you will generate a few images based on artificial data and map 
 This example assumes that you have at loaded the E.coli core network and set up the network for IDARE (Steps 1 and 3 of the previous example).
 
 #### Load Data into IDARE
-In the 'Control Panel', select the IDARE tab.  
-Click on 'Add Dataset'  
+In the 'Control Panel', select the IDARE tab. 
+
+Click on 'Add Dataset'
+
 In the dialog, click on 'Choose File'  
-Select "Fold Change of Gene Expression ethanol vs no ethanol.xls" and click 'open'  
+
+Select "Fold Change of Gene Expression ethanol vs no ethanol.xls" and click 'open' 
+
 The 'DataSet Description' field will be updated with the file name  
-As 'DataSet Type', select 'Array Dataset' (since this dataset contains only one sheet).  
+
+As 'DataSet Type', select 'Array Dataset' (since this dataset contains only one sheet). 
+
 Check the 'Use two column headers' option, since the dataset provides id and label columns.  
 Click ok.  
+
 Repeat the process with "Metabolomics fold change treatment vs Control.xls"
-Now, load the "Total relative C13 label.xls" dataset which should both be loaded as 'Multiarray Dataset'. This dataset only has a single header column (i.e. only IDs not labels), so uncheck the two-column header box. 
-Finally, load the "Proteomics Time course of ethanol treated wild type.xls" dataset, which again provides two header columns and can be loaded as both a 'Multiarray Dataset' or an 'Array dataset' as it contains only one sheet in the xls. Loading it as both types allows the selection of additional layouts (those specific to multiarray datasets and those specific to array datasets).  
+
+Now, load the "Total relative C13 label.xls" dataset which should both be loaded as 'Multiarray Dataset'. 
+
+This dataset only has a single header column (i.e. only IDs not labels), so uncheck the two-column header box. 
+
+Finally, load the "Proteomics Time course of ethanol treated wild type.xls" dataset, which again provides two header columns and can be loaded as both a 'Multiarray Dataset' or an 'Array dataset' as it contains only one sheet in the xls. 
+
+Loading it as both types allows the selection of additional layouts (those specific to multiarray datasets and those specific to array datasets).  
+
 Example descriptions would be "External Metabolite amount information" and "Reaction Activity during the experiment" and "Internal Metabolite Amounts at specific stages".
 
 #### 2.2 Create the Visualisation
@@ -91,7 +114,7 @@ Images will only be created for nodes which are part of a selected dataset and o
 
 #### 2.3 Adding IDARE images to other Styles
 If you did not select the IDARE visual style, but want to use a different style for your network, you can do so by right-clicking anywhere in a network view using the style you want to add your nodes to.
-Select 'Apps' -> 'Add IDARE Images'. Now the images will be shown for your choosen style.
+Select 'Apps' --> 'Add IDARE Images'. Now the images will be shown for your choosen style.
 
 
 ## Part3: Subnetwork Generation
@@ -104,9 +127,9 @@ You can add the sbml annotation to the Cytosol network (C_c) after step 1 of thi
 NOTE: If you want to recreate Figure 4 of the Paper, skip the creation of the Compartment subnetworks, as they were not created for that figure.  
 We first want to split the network at the transporters which translocate metabolites from the external compartment to the cytosol, and vice versa.  
 To do so:  
-Select 'Apps' -> 'IDARE' -> 'Create Subnetworks'  
+Select 'Apps' --> 'IDARE' --> 'Create Subnetworks'  
 or  
-Right Click in an empty space in the network you want to create subnetworks in -> 'Apps' -> 'Create Subnetworks'  
+Right Click in an empty space in the network you want to create subnetworks in --> 'Apps' --> 'Create Subnetworks'  
 In the resulting dialog, you can select the column to determine the node types as well as the node names.  
 If the network is set up for IDARE (see Part 1), appropriate columns are chosen automatically (i.e. if you have set up the network for idare - Step 1.3 - you can just accept the selection) .  
 You further have to choose a value for nodes which form the branching points between subnetworks, and a value for nodes that form the "base" of the subnetwork.
