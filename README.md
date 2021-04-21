@@ -293,9 +293,9 @@ We have manually laid out the Citric acid cycle subnetwork, which looks like thi
 [1]Horinouchi T, Tamaoka K, Furusawa C, Ono N, Suzuki S, Hirasawa T, Yomo T, Shimizu H (2010) Transcriptome analysis of parallel-evolved escherichia coli strains under ethanol stress. BMC Genomics 11(1):579, , URL http://dx.doi.org/10.1186/1471-2164-11-579  
 [2]Wang J, Chen L, Tian X, Gao L, Niu X, Shi M, Zhang W (2013) Global metabolomic and network analysis of escherichia coli responses to exogenous biofuels. Journal of Proteome Research 12(11):5302–5312, , URL http://dx.doi.org/10.1021/pr400640u, pMID: 24016299  
 [3] Goodarzi H, Bennett BD, Amini S, Reaves ML, Hottes AK, Rabinowitz JD, Tavazoie S (2010) Regulatory and metabolic rewiring during laboratory evolution of ethanol tolerance in e. coli. Molecular Systems Biology 6(1):378–n/a, , URL http://dx.doi.org/10.1038/msb.2010.33, 378  
-[4]Soufi B, Krug K, Harst A, Macek B (2015) Characterization of the e. coli proteome and its modifications during growth and ethanol stress. Frontiers in Microbiology 6:103, , URL http://journal.frontiersin.org/article/10.3389/fmicb.2015.00103 
-[5] van Steijn L, Verbeek FJ, Spaink HP, Merks RMH (2019) Predicting Metabolism from Gene Expression in an Improved Whole-Genome Metabolic Network Model of Danio rerio. Zebrafish. Aug;16(4):348-362. doi: 10.1089/zeb.2018.1712. PMID: 31216234; PMCID: PMC6822484.
-[6] Tarifeño-Saldivia, E., Lavergne, A., Bernard, A. et al. (2017) Transcriptome analysis of pancreatic cells across distant species highlights novel important regulator genes. BMC Biol 15, 21. https://doi.org/10.1186/s12915-017-0362-x
+[4]Soufi B, Krug K, Harst A, Macek B (2015) Characterization of the e. coli proteome and its modifications during growth and ethanol stress. Frontiers in Microbiology 6:103, , URL http://journal.frontiersin.org/article/10.3389/fmicb.2015.00103  
+[5] van Steijn L, Verbeek FJ, Spaink HP, Merks RMH (2019) Predicting Metabolism from Gene Expression in an Improved Whole-Genome Metabolic Network Model of Danio rerio. Zebrafish. Aug;16(4):348-362. doi: 10.1089/zeb.2018.1712. PMID: 31216234; PMCID: PMC6822484.  
+[6] Tarifeño-Saldivia, E., Lavergne, A., Bernard, A. et al. (2017) Transcriptome analysis of pancreatic cells across distant species highlights novel important regulator genes. BMC Biol 15, 21. https://doi.org/10.1186/s12915-017-0362-x  
 [7] Love, M.I., Huber, W. & Anders, S. (2014) Moderated estimation of fold change and dispersion for RNA-seq data with DESeq2. Genome Biol 15, 550. https://doi.org/10.1186/s13059-014-0550-8
 
 
