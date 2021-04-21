@@ -119,7 +119,7 @@ Select 'Apps' --> 'Add IDARE Images'. Now the images will be shown for your choo
 
 ## Part3: Subnetwork Generation
 
-The first step of this this Example is independent on the first 2 Examples.
+The first step of this part is independent of the first 2 parts.
 For the second step, it is necessary to have the SBML annotations added to the network (step 1.5), as otherwise the corresponding table column does not exist.
 You can add the sbml annotation to the Cytosol network (C_c) after step 1 of this example, but this would lead to gene nodes not being added in the external compartment subnetwork.
 
@@ -167,13 +167,135 @@ You can see, that the labelling for ketoglutarate is much smaller than the label
 
 # Example 2: visualizing RNA-seq data from pancreatic cell types onto the Zebrafish metabolic model
 
+You can get the model and sample data in the [Zebrafish Data folder](https://github.com/sysbiolux/IDARE-QuickStart/tree/master/Data/zebrafish)
+You can also get the model by right-clicking on this link [zebraGEM2_model.xml](https://github.com/sysbiolux/IDARE-QuickStart/tree/master/Data/zebrafish/zebraGEM2_model.xml) and selecting "save as".
+For more details on the zebrafish metabolic model, check the paper by van Steijn et al. 2019[5]. We thank the authors for their kindness.
+
+Sample data:
+
+-"TableS2_PublicData_12915_2017_362_MOESM3_ESM_4_IDARE2_NCBIds_DESEQ2_NORMcountsLog2.xlsx" - Data from Tarifeño-Salvidia et al.[6] from the transcriptome analysis of zebrafish endocrine, acinar and duct cells. TableS2 was normalized using DESeq2[7] and log2 transformed.
+
+
+## Part 1: Setting up the Network for IDARE in Cytoscape
+In this example, we will set up the *zebrafish* network for use with IDARE and add some additional annotations to the network.
+
+#### 1.1 Loading the E.Coli Core model
+Load the zebrafish network by selecting:
+
+File --> Import --> Network --> Network from File and select the zebrafish file you downloaded.
+
+#### 1.2 Generating an initial Layout
+From the Layout menu, select a layout you want to apply (for this tutorial we assume, that the **y-Files organic layout** was choosen, or no additional layout if you have cy3sbml installed).
+
+#### 1.3 Setting up the Network for IDARE
+
+Right click on some empty space in the network view.
+
+Select 'Apps' --> IDARE --> 'Setup Network For IDARE'  
+A popup will appear that lets you select the properties to be used in IDARE.  
+On the left you can select the columns you want to use for the setup. On the right, depending on your choice of columns, you can select the values to be used for compound and interaction.  
+Select the sbml type column as column to determine node types and the sbml id column as column to determine the node names.  
+As compound node value select species, and as interaction node value select reaction.  
+Check the 'Overwrite existing values' checkbox.  
+If you are using cy3sbml please select the Base network view (it should have *XXX* nodes and *XXX* edges).
+
+#### 1.4 Changing to the IDARE Visual Style
+From the 'Style' tab in the 'Control Panel' select the 'IDARE Visual Style' and apply it to the network. 
+
+Note, that the IDARE images cannot be removed from this style. 
+
+If you want to use the images with another style, you can add and remove them by right-clicking in the display area, and select 
+Apps --> Add/Remove IDARE Images
+
+#### 1.5 Adding SBML Annotations and Gene Nodes
+Right click on some empty space in the network view.  
+Select 'Apps' --> 'Add SBML Annotations'
+
+Select the zebrafish network file again. 
+If you have cy3sbml this step is not necessary, as IDARE will automatically use the SBML structure provided by cy3sbml for the network.  
+You will be asked, whether you want to add Gene Nodes. Tick the box (if not done already) and click Ok.
+
+You will notice, that additional nodes have been created, which represent the protein and gene nodes that were created. Proteins are created for all conjunctive GPR clauses (i.e. all possible and combinations that fulfil a GPR).  
+If the SBML contains enzyme species (annotated by the "isEncodedBy" bio qualifier), you would be asked which labeling pattern (i.e. database) to use for the genes and proteins.
+
+
+## Part2: Automated image generation and loading images to the Network.
+In this example you will generate a few images based on artificial data and map it to the previously created and initialized network.
+This example assumes that you have at loaded the E.coli core network and set up the network for IDARE (Steps 1 and 3 of the previous example).
+
+#### Load Data into IDARE
+In the 'Control Panel', select the IDARE tab. 
+
+Click on 'Add Dataset'
+
+In the dialog, click on 'Choose File'  
+
+Select "TableS2_PublicData_12915_2017_362_MOESM3_ESM_4_IDARE2_NCBIds_DESEQ2_NORMcountsLog2.xlsx" and click 'open' 
+
+Adjust the 'DataSet Description' to something you like, for example, "zebrafish pancreatic cell type gene expression", or the field will be updated with the file name.
+
+As 'DataSet Type', select 'Array Dataset' (this dataset contains only one sheet). 
+
+Check the 'Use two column headers' option, since the dataset provides id and label columns.  
+Click ok.  
+
+
+#### 2.2 Create the Visualisation
+
+Tick the box to 'Select' the dataset. 
+In the lower left corner, (below the 'Create' and 'Preview' buttons) are indicators, how many nodes the datasets represent in total and how many shared nodes the selection contains.  
+...
+
+#### 2.3 Adding IDARE images to other Styles
+If you did not select the IDARE visual style, but want to use a different style for your network, you can do so by right-clicking anywhere in a network view using the style you want to add your nodes to.
+Select 'Apps' --> 'Add IDARE Images'. Now the images will be shown for your choosen style.
+
+
+## Part3: Subnetwork Generation
+
+The first step of this part is independent of the first 2 parts.
+For the second step, it is necessary to have the SBML annotations added to the network (step 1.5), as otherwise the corresponding table column does not exist.
+You can add the sbml annotation to the Cytosol network (C_c) after step 1 of this example, but this would lead to gene nodes not being added in the external compartment subnetwork.
+
+#### 3.1 Create Networks for the External compartment and the cytosol
+NOTE: If you want to recreate Figure 4 of the Paper, skip the creation of the Compartment subnetworks, as they were not created for that figure.  
+We first want to split the network at the transporters which translocate metabolites from the external compartment to the cytosol, and vice versa.  
+To do so:  
+Select 'Apps' --> 'IDARE' --> 'Create Subnetworks'  
+or  
+Right Click in an empty space in the network you want to create subnetworks in --> 'Apps' --> 'Create Subnetworks'  
+In the resulting dialog, you can select the column to determine the node types as well as the node names.  
+If the network is set up for IDARE (see Part 1), appropriate columns are chosen automatically (i.e. if you have set up the network for idare - Step 1.3 - you can just accept the selection) .  
+You further have to choose a value for nodes which form the branching points between subnetworks, and a value for nodes that form the "base" of the subnetwork.
+Since the aim is to branch at the transporters between compartments reactions will be used as branching nodes and species as subnetwork nodes.   
+Click accept, when you finished the selection.  
+In the next dialog, you can select the column that contains the subnetwork identifiers as well as the type of layout that should be used for the subnetwork (or the "keep layout" option, if the current layout shoudl be kept)
+The table allows you to select nodes, which should not branch and those which should be removed entirely  (e.g. nodes with too many connections).   
+Depending on the network size some nodes are already suggested by the tool.  
+Since we want to create the networks for the cytosol and external compartment, we select "sbml compartment" as column to determine sub-networks.  
+We leave the 'Keep Layout' option as it is and select remove for the Biomass reaction (as this reaction mainly leads to a hairball structure).  
+We also select C\_c, the cytosol, and C\_e, the external medium, in the sub-networks to be generated table.   
+If we now click on the "network" tab in the 'Control Panel' we will see two new networks that were generated.   
+
+#### 3.2 Create pathway networks in the Cytosol
+There is not much to see in the external compartment, as it only contains the transporters and the cytosol is still a hairball. 
+To get a better overview, we would like to generate pathway networks in the cytosol.  
+To do so, again, select 'Apps' -> 'SubNetworkGenerator'  
+However, this time, since reactions belong to pathways and metabolites can be shared between different pathways, we select species as values for branching nodes and reaction as value for subnetwork nodes.  
+By default, the "SUBSYSTEM" column generated by the SBMLAnnotator is selected, if available, so this selection is already fine.  
+From the metabolites we would like to exclude currency metabolites and most cofactors.  
+
+
 # Example 3: integrated data nodes of regulation during human adipocyte differentiation (automated generation of the original IDARE visualization)
 
 ## Citations
 [1]Horinouchi T, Tamaoka K, Furusawa C, Ono N, Suzuki S, Hirasawa T, Yomo T, Shimizu H (2010) Transcriptome analysis of parallel-evolved escherichia coli strains under ethanol stress. BMC Genomics 11(1):579, , URL http://dx.doi.org/10.1186/1471-2164-11-579  
 [2]Wang J, Chen L, Tian X, Gao L, Niu X, Shi M, Zhang W (2013) Global metabolomic and network analysis of escherichia coli responses to exogenous biofuels. Journal of Proteome Research 12(11):5302–5312, , URL http://dx.doi.org/10.1021/pr400640u, pMID: 24016299  
 [3] Goodarzi H, Bennett BD, Amini S, Reaves ML, Hottes AK, Rabinowitz JD, Tavazoie S (2010) Regulatory and metabolic rewiring during laboratory evolution of ethanol tolerance in e. coli. Molecular Systems Biology 6(1):378–n/a, , URL http://dx.doi.org/10.1038/msb.2010.33, 378  
-[4]Soufi B, Krug K, Harst A, Macek B (2015) Characterization of the e. coli proteome and its modifications during growth and ethanol stress. Frontiers in Microbiology 6:103, , URL http://journal.frontiersin.org/article/10.3389/fmicb.2015.00103  
+[4]Soufi B, Krug K, Harst A, Macek B (2015) Characterization of the e. coli proteome and its modifications during growth and ethanol stress. Frontiers in Microbiology 6:103, , URL http://journal.frontiersin.org/article/10.3389/fmicb.2015.00103 
+[5] van Steijn L, Verbeek FJ, Spaink HP, Merks RMH (2019) Predicting Metabolism from Gene Expression in an Improved Whole-Genome Metabolic Network Model of Danio rerio. Zebrafish. Aug;16(4):348-362. doi: 10.1089/zeb.2018.1712. PMID: 31216234; PMCID: PMC6822484.
+[6] Tarifeño-Saldivia, E., Lavergne, A., Bernard, A. et al. (2017) Transcriptome analysis of pancreatic cells across distant species highlights novel important regulator genes. BMC Biol 15, 21. https://doi.org/10.1186/s12915-017-0362-x
+[7] Love, M.I., Huber, W. & Anders, S. (2014) Moderated estimation of fold change and dispersion for RNA-seq data with DESeq2. Genome Biol 15, 550. https://doi.org/10.1186/s13059-014-0550-8
 
 
 
