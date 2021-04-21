@@ -173,7 +173,7 @@ For more details on the zebrafish metabolic model, check the paper by van Steijn
 
 Sample data:
 
--"TableS2_PublicData_12915_2017_362_MOESM3_ESM_4_IDARE2_NCBIds_DESEQ2_NORMcountsLog2.xlsx" - Data from Tarifeño-Salvidia et al.[6] from the transcriptome analysis of zebrafish endocrine, acinar and duct cells. TableS2 was normalized using DESeq2[7] and log2 transformed.
+-"TableS2_PublicData_12915_2017_362_MOESM3_ESM_4_IDARE2_NCBIds_DESEQ2_NORMcountsLog2.xlsx" - Data from Tarifeño-Salvidia et al.[6] from the transcriptome analysis of zebrafish endocrine, acinar and duct cells. TableS2 was normalized using DESeq2[7], log2 transformed and ENSIDs converted to NCBI IDs to match the model.
 
 
 ## Part 1: Setting up the Network for IDARE in Cytoscape
