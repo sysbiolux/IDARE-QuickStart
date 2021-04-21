@@ -12,8 +12,11 @@ Total relative C13 label.xls - Data from Goodarzi et al.[3] for C13 labeling upo
 Proteomics Time course of ethanol treated wild type.xls - Data from Soufi et al.[4] epresenting the fold change to time 0 of different protein products associated with the genes in the network.  
 
 The Tutorial Contains three parts.
+
 Part 1 is an example with the E. coli metabolic model.
+
 Part 2 is an example with the Zebrafish metabolic model.
+
 Part 3 is an example with the Human metabolic model (Recon2) with an automated representation of the visualization from the original IDARE webportal.
 
 In each case, the following 3 steps are recommended:
