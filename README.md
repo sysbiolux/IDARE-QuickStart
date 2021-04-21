@@ -185,6 +185,13 @@ Load the zebrafish network by selecting:
 File --> Import --> Network --> Network from File and select the zebrafish file you downloaded.
 Select the Base network view (it should have 8678 nodes and 21059 edges).
 
+The zebrafish model does not contain info on the subsystems (pathways) reactions belongs to.
+This info is needed to generate subnetworks based on pathways.
+We use a csv file "ZFmodel_subsys_check.csv" (available in the [Zebrafish Data folder](https://github.com/sysbiolux/IDARE-QuickStart/tree/master/Data/zebrafish)), which contains reaction IDs in the first column (matching those used in the model) and the pathways they belong to in the second column.
+
+Load the data into Cytoscape: File --> Import --> Table from File.
+Choose 'sbml id' as 'Key Column for Network' and click 'OK'.
+
 #### 1.2 Setting up the Network for IDARE
 
 Right click on some empty space in the network view.
@@ -192,8 +199,8 @@ Right click on some empty space in the network view.
 Select 'Apps' --> IDARE --> 'Setup Network For IDARE'  
 A popup will appear that lets you select the properties to be used in IDARE.  
 On the left you can select the columns you want to use for the setup. On the right, depending on your choice of columns, you can select the values to be used for compound and interaction.  
-Select the sbml type column as column to determine node types and the sbml id column as column to determine the node names.  
-As compound node value select species, and as interaction node value select reaction.  
+Select 'sbml type' as column to determine node types and the 'sbml id' as column to determine the node names.  
+As compound node value select 'species', and as interaction node value select 'reaction'.  
 Check the 'Overwrite existing values' checkbox.  
 
 #### 1.3 Changing to the IDARE Visual Style
@@ -252,12 +259,6 @@ Select 'Apps' --> 'Add IDARE Images'. Now the images will be shown for your choo
 
 ## Part3: Subnetwork Generation
 
-The zebrafish model does not contain info on the subsystems (pathways) reactions belongs to.
-This info is needed to generate subnetworks based on pathways and can be loaded into Cytoscape (File --> Import --> Table from File).
-For doing so, we use a csv file "ZFmodel_subsys_check.csv" (available in the [Zebrafish Data folder](https://github.com/sysbiolux/IDARE-QuickStart/tree/master/Data/zebrafish)), which contains reaction IDs in the first columns (mathcing those used in the model) and the pathways they belong to in the second column.
-
-Choose 'sbml id' as 'Key Column for Network' and click 'OK'.
-
 
 as a data table first step of this part is independent of the first 2 parts.
 For the second step, it is necessary to have the SBML annotations added to the network (step 1.4), as otherwise the corresponding table column does not exist.
@@ -272,24 +273,18 @@ In the resulting dialog, you can select the column to determine the node types a
 If the network is set up for IDARE (see Part 1), appropriate columns are chosen automatically (i.e. if you have set up the network for IDARE - Step 1.3 - you can just accept the selection).  
 You further have to choose a value for nodes which form the branching points between subnetworks, and a value for nodes that form the "base" of the subnetwork.
 
-Select reactions as branching nodes and species/reactions as subnetwork nodes.   
-Click accept, when you finished the selection.  
+Select reactions as branching nodes and species as subnetwork nodes and click 'OK'.   
 
-In the next dialog, you can select the column that contains the subnetwork identifiers as well as the type of layout that should be used for the subnetwork (or the "keep layout" option, if the current layout shoudl be kept)
+In the next window, you can select the column that contains the subnetwork identifiers (select "subsystem") as well as the type of layout that should be used for the subnetwork (select "Keep Layout" / you can also try others).
+
 The table allows you to select nodes, which should not branch and those which should be removed entirely  (e.g. nodes with too many connections).   
-Depending on the network size some nodes are already suggested by the tool.  
-Since we want to create the networks for the cytosol and external compartment, we select "sbml compartment" as column to determine sub-networks.  
-We leave the 'Keep Layout' option as it is and select remove for the Biomass reaction (as this reaction mainly leads to a hairball structure).  
-We also select C\_c, the cytosol, and C\_e, the external medium, in the sub-networks to be generated table.   
-If we now click on the "network" tab in the 'Control Panel' we will see two new networks that were generated.   
+Depending on the network size some nodes are already suggested by the tool. 
 
-#### 3.2 Create pathway networks in the Cytosol
-There is not much to see in the external compartment, as it only contains the transporters and the cytosol is still a hairball. 
-To get a better overview, we would like to generate pathway networks in the cytosol.  
-To do so, again, select 'Apps' -> 'SubNetworkGenerator'  
-However, this time, since reactions belong to pathways and metabolites can be shared between different pathways, we select species as values for branching nodes and reaction as value for subnetwork nodes.  
-By default, the "SUBSYSTEM" column generated by the SBMLAnnotator is selected, if available, so this selection is already fine.  
-From the metabolites we would like to exclude currency metabolites and most cofactors.  
+Next, select nodes that should be removed as they are highly connected (and secondary). Leave as is or tick additional boxes to remove more metabolites.
+
+Finally, in the bottom part, select which subnetworks to generate (all for a through exploration or just a few cases). You can scroll down and you will see a button for "Select All". Make your selection(s) and click 'OK', the different subnetworks will be generated.
+
+We have manually laid out the Citric acid cycle subnetwork, which looks like this: ![Alt text](Data/zebrafish/ZF_CitricAcidCycle.svg?raw=true "pancreatic cell-types TCA cycle")
 
 
 # Example 3: integrated data nodes of regulation during human adipocyte differentiation (automated generation of the original IDARE visualization)
