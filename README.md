@@ -183,6 +183,7 @@ In this example, we will set up the *zebrafish* network for use with IDARE and a
 Load the zebrafish network by selecting:
 
 File --> Import --> Network --> Network from File and select the zebrafish file you downloaded.
+Select the Base network view (it should have 8678 nodes and 21059 edges).
 
 #### 1.2 Setting up the Network for IDARE
 
@@ -194,7 +195,6 @@ On the left you can select the columns you want to use for the setup. On the rig
 Select the sbml type column as column to determine node types and the sbml id column as column to determine the node names.  
 As compound node value select species, and as interaction node value select reaction.  
 Check the 'Overwrite existing values' checkbox.  
-If you are using cy3sbml please select the Base network view (it should have *XXX* nodes and *XXX* edges).
 
 #### 1.3 Changing to the IDARE Visual Style
 From the 'Style' tab in the 'Control Panel' select the 'IDARE Visual Style' and apply it to the network. 
