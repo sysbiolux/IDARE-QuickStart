@@ -3,7 +3,7 @@
 This Repository contains basic sample datasets to use with the IDARE cytoscape application.
 The data and models used in the examples are in the [Data folder](https://github.com/sysbiolux/IDARE-QuickStart/tree/master/Data).
  
-The Tutorial Contains three parts.
+The Tutorial contains three parts.
 
 Part 1 is an example with the E. coli metabolic model.
 
