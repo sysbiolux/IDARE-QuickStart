@@ -406,7 +406,7 @@ Next, select nodes that should be removed as they are highly connected (and seco
 
 Finally, in the bottom part, select which subnetworks to generate. You can scroll down and you will see a button for "Select All". Make your selection(s) and click 'OK', the different subnetworks will be generated.
 
-We have manually laid out the TAG synthesis pathway as in the manuscript Figure 1. To obtain the exact same network, load the Cytoscape session [TAG synthesis IDARE1](https://github.com/sysbiolux/IDARE-QuickStart/tree/master/Data/human/TAGsynthesisIDARE1.cys) into Cytoscape and repeat the previous steps of Example 3 to get this image: ![Alt text](Data/human/TGAFlux.pdf?raw=true "Recon1 TAG synthesis pathway IDARE1")
+We have manually laid out the TAG synthesis pathway as in the manuscript Figure 1. To obtain the exact same network, load the Cytoscape session [TAG synthesis IDARE1](https://github.com/sysbiolux/IDARE-QuickStart/tree/master/Data/human/TAGsynthesisIDARE1.cys) into Cytoscape and repeat the previous steps of Example 3 to get this image: ![Alt text](Data/human/TGAFlux.svg?raw=true "Recon1 TAG synthesis pathway IDARE1")
 
 
 # Citations
