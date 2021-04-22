@@ -286,6 +286,10 @@ Finally, in the bottom part, select which subnetworks to generate (all for a tho
 
 We have manually laid out the Citric acid cycle subnetwork, which looks like this: ![Alt text](Data/zebrafish/ZF_CitricAcidCycle.svg?raw=true "pancreatic cell-types TCA cycle")
 
+Another nice functionality from IDARE2 is the ability to generate the legend and metanode images, which are saved as png.
+The can be useful to further select or highlight specific metabolic genes with interesting data patterns.
+In our example above of the TCA cycle, although we do not see striking differences in the image, there are actually interesting differences in the expression of genes between endocrine, acinar and duct cells:
+
 
 # Example 3: integrated data nodes of regulation during human adipocyte differentiation (automated generation of the original IDARE visualization)
 
