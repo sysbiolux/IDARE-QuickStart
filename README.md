@@ -289,7 +289,7 @@ We have manually laid out the Citric acid cycle subnetwork, which looks like thi
 
 # Example 3: integrated data nodes of regulation during human adipocyte differentiation (automated generation of the original IDARE visualization)
 
-In this example, we are going to showcase the automated generation of the Integrated Data nodes of Regulation as done in the original IDARE paper[8], in which the human metabolic model Recon1[9] was used together with several omics data and the constraint-based method by Shlomi et al.[9] to perform and visualize an integrated analysis of transcriptional regulation and metabolism during human adipocyte differentiation with the SGBS cell line[10]. For visualization, Recon1 was loaded into Cytoscape and pathways were manually laid out in order to provide effective and attractive data inspection. Images representing the several omics data were generated and added to the metabolic pathways, mapping to genes. This was done within Cytoscape through the "Bypass style" option or using Java libraries for the CytoscapeWeb portal deployment.
+In this example, we are going to showcase the automated generation of the Integrated Data nodes of Regulation as done in the original IDARE paper[8], in which the human metabolic model Recon1[9] was used together with several omics data and the constraint-based method by Shlomi et al.[10] to perform and visualize an integrated analysis of transcriptional regulation and metabolism during human adipocyte differentiation with the SGBS cell line[11]. For visualization, Recon1 was loaded into Cytoscape and pathways were manually laid out in order to provide effective and attractive data inspection. Images representing the several omics data were generated and added to the metabolic pathways, mapping to genes. This was done within Cytoscape through the "Bypass style" option or using Java libraries for the CytoscapeWeb portal deployment.
 
 The purpose of the current example is to show how the task above can be simplified with IDARE2, which allows to automatically generate the same gene metanodes and load them into the networks, all whithin Cytoscape.
 
@@ -298,10 +298,10 @@ You can also get Recon1 from [HERE](http://bigg.ucsd.edu/models/RECON1).
 
 Sample data:
 
--"Expression_All_Genes_1.xlsx": discretized gene expression data (low, moderate, high) of SGBS cells during differentiation (pre-adipocytes: 4h, adipocytes: 12 days)
--"Predictions_1.xlsx": activity predictions (ND: not defined, Inactive, On) based on the gene expression data above using the method by Shlomi et al., 2008
--"H3K4Data_1.xlsx": presence/absence (NA: not available) data for H3K4me3 ChIP-seq peaks overlaping the TSS of metabolic genes (2 time points: 4h pre-adipocytes and day 12 adipocytes)
--"TF_Data_1.xlsx": presense/absence (on/off) of a transcription factor (LXR, CEBPa or PPARg) ChIP-seq peak nearby the TSS of metabolic genes. When present (on), this indicates the respective transcripton factor is likely regulating the metabolic gene.
+-"Expression_All_Genes_1.xlsx": discretized gene expression data (low, moderate, high) of SGBS cells during differentiation (pre-adipocytes: 4h, adipocytes: 12 days)  
+-"Predictions_1.xlsx": activity predictions (ND: not defined, Inactive, On) based on the gene expression data above using the method by Shlomi et al., 2008  
+-"H3K4Data_1.xlsx": presence/absence (NA: not available) data for H3K4me3 ChIP-seq peaks overlaping the TSS of metabolic genes (2 time points: 4h pre-adipocytes and day 12 adipocytes)  
+-"TF_Data_1.xlsx": presense/absence (on/off) of a transcription factor (LXR, CEBPa or PPARg) ChIP-seq peak nearby the TSS of metabolic genes. When present (on), this indicates the respective transcripton factor is likely regulating the metabolic gene.  
 
 
 ## Part 1: Setting up the Network for IDARE in Cytoscape
@@ -317,10 +317,11 @@ In this example, we will set up the *Recon1* network for use with IDARE and add 
 [4]Soufi B, Krug K, Harst A, Macek B (2015) Characterization of the e. coli proteome and its modifications during growth and ethanol stress. Frontiers in Microbiology. 6:103, , URL http://journal.frontiersin.org/article/10.3389/fmicb.2015.00103  
 [5] van Steijn L, Verbeek FJ, Spaink HP, Merks RMH (2019) Predicting Metabolism from Gene Expression in an Improved Whole-Genome Metabolic Network Model of Danio rerio. Zebrafish. Aug;16(4):348-362. doi: 10.1089/zeb.2018.1712. PMID: 31216234; PMCID: PMC6822484.  
 [6] Tarifeño-Saldivia, E., Lavergne, A., Bernard, A. et al. (2017) Transcriptome analysis of pancreatic cells across distant species highlights novel important regulator genes. BMC Biol. 15, 21. https://doi.org/10.1186/s12915-017-0362-x  
-[7] Love, M.I., Huber, W. & Anders, S. (2014) Moderated estimation of fold change and dispersion for RNA-seq data with DESeq2. Genome Biol 15, 550. https://doi.org/10.1186/s13059-014-0550-8
-[8] Galhardo M, Sinkkonen L, Berninger P, Lin J, Sauter T, Heinäniemi M. (2014) Integrated analysis of transcript-level regulation of metabolism reveals disease-relevant nodes of the human metabolic network. Nucleic Acids Res. 42(3):1474-96. doi: 10.1093/nar/gkt989. PMID: 24198249; PMCID: PMC3919568.
-[9] Shlomi T, Cabili MN, Herrgård MJ, Palsson BØ, Ruppin E. (2008) Network-based prediction of human tissue-specific metabolism. Nat Biotechnol. Sep;26(9):1003-10. doi: 10.1038/nbt.1487. PMID: 18711341.
-[10] Wabitsch M, Brenner RE, Melzner I, Braun M, Möller P, Heinze E, Debatin KM, Hauner H. (2001) Characterization of a human preadipocyte cell strain with high capacity for adipose differentiation. Int J Obes Relat Metab Disord. 25(1):8-15. doi: 10.1038/sj.ijo.0801520. PMID: 11244452.
+[7] Love, M.I., Huber, W. & Anders, S. (2014) Moderated estimation of fold change and dispersion for RNA-seq data with DESeq2. Genome Biol 15, 550. https://doi.org/10.1186/s13059-014-0550-8  
+[8] Galhardo M, Sinkkonen L, Berninger P, Lin J, Sauter T, Heinäniemi M. (2014) Integrated analysis of transcript-level regulation of metabolism reveals disease-relevant nodes of the human metabolic network. Nucleic Acids Res. 42(3):1474-96. doi: 10.1093/nar/gkt989. PMID: 24198249; PMCID: PMC3919568.  
+[9] Duarte NC, Becker SA, Jamshidi N, Thiele I, Mo ML, Vo TD, Srivas R, Palsson BØ. Global reconstruction of the human metabolic network based on genomic and bibliomic data. Proc Natl Acad Sci U S A. 2007 Feb 6;104(6):1777-82. doi: 10.1073/pnas.0610772104. Epub 2007 Jan 31. PMID: 17267599; PMCID: PMC1794290.  
+[10] Shlomi T, Cabili MN, Herrgård MJ, Palsson BØ, Ruppin E. (2008) Network-based prediction of human tissue-specific metabolism. Nat Biotechnol. Sep;26(9):1003-10. doi: 10.1038/nbt.1487. PMID: 18711341.  
+[11] Wabitsch M, Brenner RE, Melzner I, Braun M, Möller P, Heinze E, Debatin KM, Hauner H. (2001) Characterization of a human preadipocyte cell strain with high capacity for adipose differentiation. Int J Obes Relat Metab Disord. 25(1):8-15. doi: 10.1038/sj.ijo.0801520. PMID: 11244452.  
 
 
 
