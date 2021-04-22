@@ -18,7 +18,7 @@ In each case, the following 3 steps are recommended:
 
 # Example 1: overlaying multiple omics data onto the E. coli metabolic model
 
-You can get the model and sample data in the [*E.Coli* Data folder](https://github.com/sysbiolux/IDARE-QuickStart/tree/master/Data/ecoli)
+You can get the model and sample data in the [*E.coli* Data folder](https://github.com/sysbiolux/IDARE-QuickStart/tree/master/Data/ecoli)
 You can also get the model by right-clicking on this [Link](https://github.com/sysbiolux/IDARE-QuickStart/tree/master/Data/ecoli/ecoli_core_model.xml) and selecting "save as".
 
 Sample data:
@@ -30,12 +30,12 @@ Sample data:
 
 
 ## Part 1: Setting up the Network for IDARE in Cytoscape
-In this example, we will set up the *E.Coli* core network for use with IDARE and add some additional annotations to the network.
+In this example, we will set up the *E.coli* core network for use with IDARE and add some additional annotations to the network.
 
-#### 1.1 Loading the E.Coli Core model
+#### 1.1 Loading the E.coli core model
 After installing the IDARE app (either from the Cytoscape app store or from [here](https://github.com/sysbiolux/IDARE/releases/download/2.0/IDARE-2.0.jar)), load the *E.coli* core network by selecting:
 
-File --> Import --> Network --> Network from File and select the *E.Coli* core file you downloaded.
+File --> Import --> Network --> Network from File and select the *E.coli* core file you downloaded.
 
 #### 1.2 Generating an initial Layout
 From the Layout menu, select a layout you want to apply (for this tutorial we assume, that the **y-Files organic layout** was choosen, or no additional layout if you have cy3sbml installed).
@@ -64,7 +64,7 @@ Apps --> Add/Remove IDARE Images
 Right click on some empty space in the network view.  
 Select 'Apps' --> 'Add SBML Annotations'
 
-Select the *E.Coli* core network file again. 
+Select the *E.coli* core network file again. 
 If you have cy3sbml this step is not necessary, as IDARE will automatically use the SBML structure provided by cy3sbml for the network.  
 You will be asked, whether you want to add Gene Nodes. Tick the box (if not done already) and click Ok.
 
@@ -179,7 +179,7 @@ Sample data:
 ## Part 1: Setting up the Network for IDARE in Cytoscape
 In this example, we will set up the *zebrafish* network for use with IDARE and add some additional annotations to the network.
 
-#### 1.1 Loading the E.Coli Core model
+#### 1.1 Loading the zebrafish metabolic model
 Load the zebrafish network by selecting:
 
 File --> Import --> Network --> Network from File and select the zebrafish file you downloaded.
@@ -289,15 +289,38 @@ We have manually laid out the Citric acid cycle subnetwork, which looks like thi
 
 # Example 3: integrated data nodes of regulation during human adipocyte differentiation (automated generation of the original IDARE visualization)
 
-## Citations
-[1]Horinouchi T, Tamaoka K, Furusawa C, Ono N, Suzuki S, Hirasawa T, Yomo T, Shimizu H (2010) Transcriptome analysis of parallel-evolved escherichia coli strains under ethanol stress. BMC Genomics 11(1):579, , URL http://dx.doi.org/10.1186/1471-2164-11-579  
-[2]Wang J, Chen L, Tian X, Gao L, Niu X, Shi M, Zhang W (2013) Global metabolomic and network analysis of escherichia coli responses to exogenous biofuels. Journal of Proteome Research 12(11):5302–5312, , URL http://dx.doi.org/10.1021/pr400640u, pMID: 24016299  
-[3] Goodarzi H, Bennett BD, Amini S, Reaves ML, Hottes AK, Rabinowitz JD, Tavazoie S (2010) Regulatory and metabolic rewiring during laboratory evolution of ethanol tolerance in e. coli. Molecular Systems Biology 6(1):378–n/a, , URL http://dx.doi.org/10.1038/msb.2010.33, 378  
-[4]Soufi B, Krug K, Harst A, Macek B (2015) Characterization of the e. coli proteome and its modifications during growth and ethanol stress. Frontiers in Microbiology 6:103, , URL http://journal.frontiersin.org/article/10.3389/fmicb.2015.00103  
-[5] van Steijn L, Verbeek FJ, Spaink HP, Merks RMH (2019) Predicting Metabolism from Gene Expression in an Improved Whole-Genome Metabolic Network Model of Danio rerio. Zebrafish. Aug;16(4):348-362. doi: 10.1089/zeb.2018.1712. PMID: 31216234; PMCID: PMC6822484.  
-[6] Tarifeño-Saldivia, E., Lavergne, A., Bernard, A. et al. (2017) Transcriptome analysis of pancreatic cells across distant species highlights novel important regulator genes. BMC Biol 15, 21. https://doi.org/10.1186/s12915-017-0362-x  
-[7] Love, M.I., Huber, W. & Anders, S. (2014) Moderated estimation of fold change and dispersion for RNA-seq data with DESeq2. Genome Biol 15, 550. https://doi.org/10.1186/s13059-014-0550-8
+In this example, we are going to showcase the automated generation of the Integrated Data nodes of Regulation as done in the original IDARE paper[8], in which the human metabolic model Recon1[9] was used together with several omics data and the constraint-based method by Shlomi et al.[9] to perform and visualize an integrated analysis of transcriptional regulation and metabolism during human adipocyte differentiation with the SGBS cell line[10]. For visualization, Recon1 was loaded into Cytoscape and pathways were manually laid out in order to provide effective and attractive data inspection. Images representing the several omics data were generated and added to the metabolic pathways, mapping to genes. This was done within Cytoscape through the "Bypass style" option or using Java libraries for the CytoscapeWeb portal deployment.
 
+The purpose of the current example is to show how the task above can be simplified with IDARE2, which allows to automatically generate the same gene metanodes and load them into the networks, all whithin Cytoscape.
+
+The model and data for this example are in the [Human Data folder](https://github.com/sysbiolux/IDARE-QuickStart/tree/master/Data/human).
+You can also get Recon1 from [HERE](http://bigg.ucsd.edu/models/RECON1).
+
+Sample data:
+
+-"Expression_All_Genes_1.xlsx": discretized gene expression data (low, moderate, high) of SGBS cells during differentiation (pre-adipocytes: 4h, adipocytes: 12 days)
+-"Predictions_1.xlsx": activity predictions (ND: not defined, Inactive, On) based on the gene expression data above using the method by Shlomi et al., 2008
+-"H3K4Data_1.xlsx": presence/absence (NA: not available) data for H3K4me3 ChIP-seq peaks overlaping the TSS of metabolic genes (2 time points: 4h pre-adipocytes and day 12 adipocytes)
+-"TF_Data_1.xlsx": presense/absence (on/off) of a transcription factor (LXR, CEBPa or PPARg) ChIP-seq peak nearby the TSS of metabolic genes. When present (on), this indicates the respective transcripton factor is likely regulating the metabolic gene.
+
+
+## Part 1: Setting up the Network for IDARE in Cytoscape
+In this example, we will set up the *Recon1* network for use with IDARE and add some additional annotations to the network.
+
+### 1.1 Loading the Recon1 model
+
+
+# Citations
+[1]Horinouchi T, Tamaoka K, Furusawa C, Ono N, Suzuki S, Hirasawa T, Yomo T, Shimizu H (2010) Transcriptome analysis of parallel-evolved escherichia coli strains under ethanol stress. BMC Genomics. 11(1):579, , URL http://dx.doi.org/10.1186/1471-2164-11-579  
+[2]Wang J, Chen L, Tian X, Gao L, Niu X, Shi M, Zhang W (2013) Global metabolomic and network analysis of escherichia coli responses to exogenous biofuels. Journal of Proteome Research. 12(11):5302–5312, , URL http://dx.doi.org/10.1021/pr400640u, pMID: 24016299  
+[3] Goodarzi H, Bennett BD, Amini S, Reaves ML, Hottes AK, Rabinowitz JD, Tavazoie S (2010) Regulatory and metabolic rewiring during laboratory evolution of ethanol tolerance in e. coli. Molecular Systems Biology. 6(1):378–n/a, , URL http://dx.doi.org/10.1038/msb.2010.33, 378  
+[4]Soufi B, Krug K, Harst A, Macek B (2015) Characterization of the e. coli proteome and its modifications during growth and ethanol stress. Frontiers in Microbiology. 6:103, , URL http://journal.frontiersin.org/article/10.3389/fmicb.2015.00103  
+[5] van Steijn L, Verbeek FJ, Spaink HP, Merks RMH (2019) Predicting Metabolism from Gene Expression in an Improved Whole-Genome Metabolic Network Model of Danio rerio. Zebrafish. Aug;16(4):348-362. doi: 10.1089/zeb.2018.1712. PMID: 31216234; PMCID: PMC6822484.  
+[6] Tarifeño-Saldivia, E., Lavergne, A., Bernard, A. et al. (2017) Transcriptome analysis of pancreatic cells across distant species highlights novel important regulator genes. BMC Biol. 15, 21. https://doi.org/10.1186/s12915-017-0362-x  
+[7] Love, M.I., Huber, W. & Anders, S. (2014) Moderated estimation of fold change and dispersion for RNA-seq data with DESeq2. Genome Biol 15, 550. https://doi.org/10.1186/s13059-014-0550-8
+[8] Galhardo M, Sinkkonen L, Berninger P, Lin J, Sauter T, Heinäniemi M. (2014) Integrated analysis of transcript-level regulation of metabolism reveals disease-relevant nodes of the human metabolic network. Nucleic Acids Res. 42(3):1474-96. doi: 10.1093/nar/gkt989. PMID: 24198249; PMCID: PMC3919568.
+[9] Shlomi T, Cabili MN, Herrgård MJ, Palsson BØ, Ruppin E. (2008) Network-based prediction of human tissue-specific metabolism. Nat Biotechnol. Sep;26(9):1003-10. doi: 10.1038/nbt.1487. PMID: 18711341.
+[10] Wabitsch M, Brenner RE, Melzner I, Braun M, Möller P, Heinze E, Debatin KM, Hauner H. (2001) Characterization of a human preadipocyte cell strain with high capacity for adipose differentiation. Int J Obes Relat Metab Disord. 25(1):8-15. doi: 10.1038/sj.ijo.0801520. PMID: 11244452.
 
 
 
