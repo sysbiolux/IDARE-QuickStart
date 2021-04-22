@@ -3,13 +3,12 @@
 This Repository contains basic sample datasets to use with the IDARE cytoscape application.
 The data and models used in the examples are in the [Data folder](https://github.com/sysbiolux/IDARE-QuickStart/tree/master/Data).
  
-The Tutorial contains three parts.
+The Tutorial contains two parts.
 
 Part 1 is an example with the E. coli metabolic model overlayed with metabolomic, proteomic and gene expression data.
 
 Part 2 is an example with the Zebrafish metabolic model and gene expression data from 3 pancreatic cell types.
 
-Part 3 is an example with the Human metabolic model (Recon2) with an automated representation of the visualization from the original IDARE webportal.
 
 In each case, the following 3 steps are recommended:
 1) setting up the network, which is necessary for image matching.  
@@ -287,130 +286,8 @@ Finally, in the bottom part, select which subnetworks to generate (all for a tho
 We have manually laid out the Citric acid cycle subnetwork, which looks like this: ![Alt text](Data/zebrafish/ZF_CitricAcidCycle.svg?raw=true "pancreatic cell-types TCA cycle")
 
 Another nice functionality from IDARE2 is the ability to generate the legend and metanode images, which are saved as png.
-The can be useful to further select or highlight specific metabolic genes with interesting data patterns.
-In our example above of the TCA cycle, although we do not see striking differences in the image, there are actually interesting differences in the expression of genes between endocrine, acinar and duct cells:
-
-
-# Example 3: integrated data nodes of regulation during human adipocyte differentiation (automated generation of the original IDARE visualization)
-
-In this example, we are going to showcase the automated generation of the Integrated Data nodes of Regulation as done in the original IDARE paper[8], in which the human metabolic model Recon1[9] was used together with several omics data and the constraint-based method by Shlomi et al.[10] to perform and visualize an integrated analysis of transcriptional regulation and metabolism during human adipocyte differentiation with the SGBS cell line[11]. For visualization, Recon1 was loaded into Cytoscape and pathways were manually laid out in order to provide effective and attractive data inspection. Images representing the several omics data were generated and added to the metabolic pathways, mapping to genes. This was done within Cytoscape through the "Bypass style" option or using Java libraries for the CytoscapeWeb portal deployment.
-
-The purpose of the current example is to show how the task above can be simplified with IDARE2, which allows to automatically generate the same gene metanodes and load them into the networks, all whithin Cytoscape.
-
-The model and data for this example are in the [Human Data folder](https://github.com/sysbiolux/IDARE-QuickStart/tree/master/Data/human).
-You can also get Recon1 from [HERE](http://bigg.ucsd.edu/models/RECON1).
-
-Sample data:
-
--"Expression_All_Genes_1.xlsx": discretized gene expression data (low, moderate, high) of SGBS cells during differentiation (pre-adipocytes: 4h, adipocytes: 12 days)  
--"Predictions_1.xlsx": activity predictions (ND: not defined, Inactive, On) based on the gene expression data above using the method by Shlomi et al., 2008  
--"H3K4Data_1.xlsx": presence/absence (NA: not available) data for H3K4me3 ChIP-seq peaks overlaping the TSS of metabolic genes (2 time points: 4h pre-adipocytes and day 12 adipocytes)  
--"TF_Data_1.xlsx": presense/absence (on/off) of a transcription factor (LXR, CEBPa or PPARg) ChIP-seq peak nearby the TSS of metabolic genes. When present (on), this indicates the respective transcripton factor is likely regulating the metabolic gene.  
-
-
-## Part 1: Setting up the Network for IDARE in Cytoscape
-In this example, we will set up the *Recon1* network for use with IDARE and add some additional annotations to the network.
-
-### 1.1 Loading the Recon1 model
-Load the zebrafish network by selecting:
-
-File --> Import --> Network --> Network from File and select the zebrafish file you downloaded.
-Select the Base network view (it should have 10799 nodes and 29932 edges).
-
-### 1.2 Setting up the Network for IDARE
-
-Right click on some empty space in the network view.
-
-Select 'Apps' --> IDARE --> 'Setup Network For IDARE'  
-A popup will appear that lets you select the properties to be used in IDARE.  
-On the left you can select the columns you want to use for the setup. On the right, depending on your choice of columns, you can select the values to be used for compound and interaction.  
-Select 'sbml type' as column to determine node types and the 'sbml id' as column to determine the node names.  
-As compound node value select 'species', and as interaction node value select 'reaction'.  
-Tick the 'Overwrite existing values' checkbox and click 'OK'.  
-
-### 1.3 Changing to the IDARE Visual Style
-From the 'Style' tab in the 'Control Panel' select the 'IDARE Visual Style' and apply it to the network. 
-
-Note, that the IDARE images cannot be removed from this style. 
-
-If you want to use the images with another style, you can add and remove them by right-clicking in the display area, and select 
-Apps --> Add/Remove IDARE Images
-
-### 1.4 Adding SBML Annotations and Gene Nodes
-Right click on some empty space in the network view.  
-Select 'Apps' --> 'Add SBML Annotations'
-
-Leave all boxes ticked and click 'OK'.
-
-You will notice that additional nodes and edges have been created (total of 10331 nodes and 30032 edges), which represent the protein and gene nodes that were created. Proteins are created for all conjunctive GPR clauses (i.e. all possible and combinations that fulfill a GPR).  
-If the SBML contains enzyme species (annotated by the "isEncodedBy" bio qualifier), you would be asked which labeling pattern (i.e. database) to use for the genes and proteins.
-
-
-## Part2: Automated image generation and loading images to the Network.
-In this part you will generate images using the same omics datasets from the original IDARE paper[8].  
-This part assumes you have loaded the Recon1 model and set up the network for IDARE (see Part 1 before).
-
-### Load Data into IDARE
-In the 'Control Panel', select the IDARE tab. 
-
-Click on 'Add Dataset'
-
-In the dialog, click on 'Choose File'  
-
-Select "Expression_All_Genes_1.xlsx" and click 'open'. You can leave the 'DataSet Description' as the filename or edit to something you like.  
-As 'DataSet Type', select 'Array Dataset' (this dataset contains only one sheet).  
-Check the 'Use two column headers' option, since the dataset provides id and label columns.  
-Click ok.  
-
-Repeat the process for the 3 remaining datasets:
--"Predictions_1.xlsx";   
--"H3K4Data_1.xlsx";    
--"TF_Data_1.xlsx";   
-
-
-### 2.2 Create the Visualisation
-
-Tick the boxes to select the datasets. 
-In the lower left corner, (below the 'Create' and 'Preview' buttons) are indicators, how many nodes the datasets represent in total and how many shared nodes the selection contains.  
-
-As 'Visualization Type' select 'Time Series' for "Expression_All_Genes_1.xlsx" and "Predictions_1.xlsx"; 'Gridded Circles' for "H3K4Data_1.xlsx" and 'Circles' for "TF_Data_1.xlsx". 
-
-Click on 'Preview Visualization' to see an example node and legend.
-Once done, click on 'Create Visualization' to display the images onto the network. You may need to zoom in several times to see the images on the gene nodes.
-
-For the 'Colors', select blue-yellow-red for the datasets with 3 levels and blue-red for the transcription factor dataset, which only has 2 levels.
-
-### 2.3 Adding IDARE images to other Styles
-If you did not select the IDARE visual style, but want to use a different style for your network, you can do so by right-clicking anywhere in a network view using the style you want to add your nodes to.
-Select 'Apps' --> 'Add IDARE Images'. Now the images will be shown for your choosen style.
-
-
-## Part3: Subnetwork Generation
-
-It is necessary to have the SBML annotations added to the network (step 1.4), as otherwise the corresponding table column does not exist.
-
-### 3.1 Create subnetworks
-
-Select 'Apps' --> 'IDARE' --> 'Create Subnetworks'  
-or  
-Right Click in an empty space in the network you want to create subnetworks in --> 'Apps' --> 'Create Subnetworks'  
-
-In the resulting dialog, you can select the column to determine the node types as well as the node names.  
-If the network is set up for IDARE (see Part 1), appropriate columns are chosen automatically (i.e. if you have set up the network for IDARE - Step 1.3 - you can just accept the selection).  
-You further have to choose a value for nodes which form the branching points between subnetworks, and a value for nodes that form the "base" of the subnetwork.
-
-Select 'reactions' as branching nodes and 'species' as subnetwork nodes and click 'OK'.   
-
-In the next window, you can select the column that contains the subnetwork identifiers (select "subsystem") as well as the type of layout that should be used for the subnetwork (select "Keep Layout" / you can also try others).
-
-The table allows you to select nodes, which should not branch and those which should be removed entirely  (e.g. nodes with too many connections).   
-Depending on the network size some nodes are already suggested by the tool. 
-
-Next, select nodes that should be removed as they are highly connected (and secondary). Leave as is or tick additional boxes to remove more metabolites.
-
-Finally, in the bottom part, select which subnetworks to generate. You can scroll down and you will see a button for "Select All". Make your selection(s) and click 'OK', the different subnetworks will be generated.
-
-We have manually laid out the TAG synthesis pathway as in the manuscript Figure 1. To obtain the exact same network, load the Cytoscape session [TAG synthesis IDARE1](https://github.com/sysbiolux/IDARE-QuickStart/tree/master/Data/human/TAGsynthesisIDARE1.cys) into Cytoscape and repeat the previous steps of Example 3 to get this image: ![Alt text](Data/human/TGAFlux.svg?raw=true "Recon1 TAG synthesis pathway IDARE1")
+This can be useful to further select or highlight specific metabolic genes with interesting data patterns.
+In our example above of the TCA cycle, although we do not see striking differences in the image, there are actually interesting differences in the expression of genes between endocrine, acinar and duct cells.
 
 
 # Citations
@@ -421,10 +298,6 @@ We have manually laid out the TAG synthesis pathway as in the manuscript Figure 
 [5] van Steijn L, Verbeek FJ, Spaink HP, Merks RMH (2019) Predicting Metabolism from Gene Expression in an Improved Whole-Genome Metabolic Network Model of Danio rerio. Zebrafish. Aug;16(4):348-362. doi: 10.1089/zeb.2018.1712. PMID: 31216234; PMCID: PMC6822484.  
 [6] Tarifeño-Saldivia, E., Lavergne, A., Bernard, A. et al. (2017) Transcriptome analysis of pancreatic cells across distant species highlights novel important regulator genes. BMC Biol. 15, 21. https://doi.org/10.1186/s12915-017-0362-x  
 [7] Love, M.I., Huber, W. & Anders, S. (2014) Moderated estimation of fold change and dispersion for RNA-seq data with DESeq2. Genome Biol 15, 550. https://doi.org/10.1186/s13059-014-0550-8  
-[8] Galhardo M, Sinkkonen L, Berninger P, Lin J, Sauter T, Heinäniemi M. (2014) Integrated analysis of transcript-level regulation of metabolism reveals disease-relevant nodes of the human metabolic network. Nucleic Acids Res. 42(3):1474-96. doi: 10.1093/nar/gkt989. PMID: 24198249; PMCID: PMC3919568.  
-[9] Duarte NC, Becker SA, Jamshidi N, Thiele I, Mo ML, Vo TD, Srivas R, Palsson BØ. Global reconstruction of the human metabolic network based on genomic and bibliomic data. Proc Natl Acad Sci U S A. 2007 Feb 6;104(6):1777-82. doi: 10.1073/pnas.0610772104. Epub 2007 Jan 31. PMID: 17267599; PMCID: PMC1794290.  
-[10] Shlomi T, Cabili MN, Herrgård MJ, Palsson BØ, Ruppin E. (2008) Network-based prediction of human tissue-specific metabolism. Nat Biotechnol. Sep;26(9):1003-10. doi: 10.1038/nbt.1487. PMID: 18711341.  
-[11] Wabitsch M, Brenner RE, Melzner I, Braun M, Möller P, Heinze E, Debatin KM, Hauner H. (2001) Characterization of a human preadipocyte cell strain with high capacity for adipose differentiation. Int J Obes Relat Metab Disord. 25(1):8-15. doi: 10.1038/sj.ijo.0801520. PMID: 11244452.  
 
 
 
