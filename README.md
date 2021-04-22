@@ -16,6 +16,8 @@ In each case, the following 3 steps are recommended:
 2) adding images based on the data to the network.  
 3) split the network into parts based on compartments and pathways.  
 
+For more detailed descriptions on the tool, please check the [USER MANUAL](https://github.com/sysbiolux/IDARE/blob/master/UserManual.pdf).
+
 # Example 1: overlaying multiple omics data onto the E. coli metabolic model
 
 You can get the model and sample data in the [*E.coli* Data folder](https://github.com/sysbiolux/IDARE-QuickStart/tree/master/Data/ecoli)
@@ -32,15 +34,15 @@ Sample data:
 ## Part 1: Setting up the Network for IDARE in Cytoscape
 In this example, we will set up the *E.coli* core network for use with IDARE and add some additional annotations to the network.
 
-#### 1.1 Loading the E.coli core model
+### 1.1 Loading the E.coli core model
 After installing the IDARE app (either from the Cytoscape app store or from [here](https://github.com/sysbiolux/IDARE/releases/download/2.0/IDARE-2.0.jar)), load the *E.coli* core network by selecting:
 
 File --> Import --> Network --> Network from File and select the *E.coli* core file you downloaded.
 
-#### 1.2 Generating an initial Layout
+### 1.2 Generating an initial Layout
 From the Layout menu, select a layout you want to apply (for this tutorial we assume, that the **y-Files organic layout** was choosen, or no additional layout if you have cy3sbml installed).
 
-#### 1.3 Setting up the Network for IDARE
+### 1.3 Setting up the Network for IDARE
 
 Right click on some empty space in the network view.
 
@@ -52,7 +54,7 @@ As compound node value select species, and as interaction node value select reac
 Check the 'Overwrite existing values' checkbox.  
 If you are using cy3sbml please select the Base network view (it should have 187 nodes and 380 edges).
 
-#### 1.4 Changing to the IDARE Visual Style
+### 1.4 Changing to the IDARE Visual Style
 From the 'Style' tab in the 'Control Panel' select the 'IDARE Visual Style' and apply it to the network. 
 
 Note, that the IDARE images cannot be removed from this style. 
@@ -60,7 +62,7 @@ Note, that the IDARE images cannot be removed from this style.
 If you want to use the images with another style, you can add and remove them by right-clicking in the display area, and select 
 Apps --> Add/Remove IDARE Images
 
-#### 1.5 Adding SBML Annotations and Gene Nodes
+### 1.5 Adding SBML Annotations and Gene Nodes
 Right click on some empty space in the network view.  
 Select 'Apps' --> 'Add SBML Annotations'
 
@@ -76,7 +78,7 @@ If the SBML contains enzyme species (annotated by the "isEncodedBy" bio qualifie
 In this example you will generate a few images based on artificial data and map it to the previously created and initialized network.
 This example assumes that you have at loaded the E.coli core network and set up the network for IDARE (Steps 1 and 3 of the previous example).
 
-#### Load Data into IDARE
+### Load Data into IDARE
 In the 'Control Panel', select the IDARE tab. 
 
 Click on 'Add Dataset'
@@ -104,7 +106,7 @@ Loading it as both types allows the selection of additional layouts (those speci
 
 Example descriptions would be "External Metabolite amount information" and "Reaction Activity during the experiment" and "Internal Metabolite Amounts at specific stages".
 
-#### 2.2 Create the Visualisation
+### 2.2 Create the Visualisation
 You can now select individual datasets you want to visualize. 
 To do so, choose a selection of datasets from the table by ticking the "selected" boxes.  
 In the lower left corner, (below the 'Create' and 'Preview' buttons) are indicators, how many nodes the datasets represent in total and how many shared nodes the selection contains.  
@@ -112,7 +114,7 @@ When creating visualisations for multiple datasets at once, there should be an o
 However, you can of course create multiple different nodes by selecting different sets of data.
 Images will only be created for nodes which are part of a selected dataset and old images will be kept unless a new image is created for the node.
 
-#### 2.3 Adding IDARE images to other Styles
+### 2.3 Adding IDARE images to other Styles
 If you did not select the IDARE visual style, but want to use a different style for your network, you can do so by right-clicking anywhere in a network view using the style you want to add your nodes to.
 Select 'Apps' --> 'Add IDARE Images'. Now the images will be shown for your choosen style.
 
@@ -123,7 +125,7 @@ The first step of this part is independent of the first 2 parts.
 For the second step, it is necessary to have the SBML annotations added to the network (step 1.5), as otherwise the corresponding table column does not exist.
 You can add the sbml annotation to the Cytosol network (C_c) after step 1 of this example, but this would lead to gene nodes not being added in the external compartment subnetwork.
 
-#### 3.1 Create Networks for the External compartment and the cytosol
+### 3.1 Create Networks for the External compartment and the cytosol
 NOTE: If you want to recreate Figure 4 of the Paper, skip the creation of the Compartment subnetworks, as they were not created for that figure.  
 We first want to split the network at the transporters which translocate metabolites from the external compartment to the cytosol, and vice versa.  
 To do so:  
@@ -143,7 +145,7 @@ We leave the 'Keep Layout' option as it is and select remove for the Biomass rea
 We also select C\_c, the cytosol, and C\_e, the external medium, in the sub-networks to be generated table.   
 If we now click on the "network" tab in the 'Control Panel' we will see two new networks that were generated.   
 
-#### 3.2 Create pathway networks in the Cytosol
+### 3.2 Create pathway networks in the Cytosol
 There is not much to see in the external compartment, as it only contains the transporters and the cytosol is still a hairball. 
 To get a better overview, we would like to generate pathway networks in the cytosol.  
 To do so, again, select 'Apps' -> 'SubNetworkGenerator'  
@@ -179,7 +181,7 @@ Sample data:
 ## Part 1: Setting up the Network for IDARE in Cytoscape
 In this example, we will set up the *zebrafish* network for use with IDARE and add some additional annotations to the network.
 
-#### 1.1 Loading the zebrafish metabolic model
+### 1.1 Loading the zebrafish metabolic model
 Load the zebrafish network by selecting:
 
 File --> Import --> Network --> Network from File and select the zebrafish file you downloaded.
@@ -192,7 +194,7 @@ We use a csv file "ZFmodel_subsys_check.csv" (available in the [Zebrafish Data f
 Load the data into Cytoscape: File --> Import --> Table from File.
 Choose 'sbml id' as 'Key Column for Network' and click 'OK'.
 
-#### 1.2 Setting up the Network for IDARE
+### 1.2 Setting up the Network for IDARE
 
 Right click on some empty space in the network view.
 
@@ -203,7 +205,7 @@ Select 'sbml type' as column to determine node types and the 'sbml id' as column
 As compound node value select 'species', and as interaction node value select 'reaction'.  
 Check the 'Overwrite existing values' checkbox.  
 
-#### 1.3 Changing to the IDARE Visual Style
+### 1.3 Changing to the IDARE Visual Style
 From the 'Style' tab in the 'Control Panel' select the 'IDARE Visual Style' and apply it to the network. 
 
 Note, that the IDARE images cannot be removed from this style. 
@@ -211,7 +213,7 @@ Note, that the IDARE images cannot be removed from this style.
 If you want to use the images with another style, you can add and remove them by right-clicking in the display area, and select 
 Apps --> Add/Remove IDARE Images
 
-#### 1.4 Adding SBML Annotations and Gene Nodes
+### 1.4 Adding SBML Annotations and Gene Nodes
 Right click on some empty space in the network view.  
 Select 'Apps' --> 'Add SBML Annotations'
 
@@ -223,10 +225,10 @@ If the SBML contains enzyme species (annotated by the "isEncodedBy" bio qualifie
 
 
 ## Part2: Automated image generation and loading images to the Network.
-In this part you will generate a images based on RNA-seq data and map them to the previously created and initialized network.
+In this part you will generate images based on RNA-seq data and map them to the previously created and initialized network.
 This part assumes you have loaded the zebrafish model and set up the network for IDARE (see Part 1 before).
 
-#### Load Data into IDARE
+### Load Data into IDARE
 In the 'Control Panel', select the IDARE tab. 
 
 Click on 'Add Dataset'
@@ -243,27 +245,25 @@ Check the 'Use two column headers' option, since the dataset provides id and lab
 Click ok.  
 
 
-#### 2.2 Create the Visualisation
+### 2.2 Create the Visualisation
 
 Tick the box to 'Select' the dataset. 
 In the lower left corner, (below the 'Create' and 'Preview' buttons) are indicators, how many nodes the datasets represent in total and how many shared nodes the selection contains.  
 
-Click on 'Preview Visualization' to see an example node and legend and adjust adjust the Visualization Type to the most suitable.
+Click on 'Preview Visualization' to see an example node and legend and adjust the 'Visualization Type' to the most suitable.
 Once done, click on 'Create Visualization' to display the images onto the network. You may need to zoom in several times to see the images on the gene nodes.
 
 
-#### 2.3 Adding IDARE images to other Styles
+### 2.3 Adding IDARE images to other Styles
 If you did not select the IDARE visual style, but want to use a different style for your network, you can do so by right-clicking anywhere in a network view using the style you want to add your nodes to.
 Select 'Apps' --> 'Add IDARE Images'. Now the images will be shown for your choosen style.
 
 
 ## Part3: Subnetwork Generation
 
+It is necessary to have the SBML annotations added to the network (step 1.4), as otherwise the corresponding table column does not exist.
 
-as a data table first step of this part is independent of the first 2 parts.
-For the second step, it is necessary to have the SBML annotations added to the network (step 1.4), as otherwise the corresponding table column does not exist.
-
-#### 3.1 Create subnetworks
+### 3.1 Create subnetworks
 
 Select 'Apps' --> 'IDARE' --> 'Create Subnetworks'  
 or  
@@ -282,7 +282,7 @@ Depending on the network size some nodes are already suggested by the tool.
 
 Next, select nodes that should be removed as they are highly connected (and secondary). Leave as is or tick additional boxes to remove more metabolites.
 
-Finally, in the bottom part, select which subnetworks to generate (all for a through exploration or just a few cases). You can scroll down and you will see a button for "Select All". Make your selection(s) and click 'OK', the different subnetworks will be generated.
+Finally, in the bottom part, select which subnetworks to generate (all for a thorough exploration or just a few cases). You can scroll down and you will see a button for "Select All". Make your selection(s) and click 'OK', the different subnetworks will be generated.
 
 We have manually laid out the Citric acid cycle subnetwork, which looks like this: ![Alt text](Data/zebrafish/ZF_CitricAcidCycle.svg?raw=true "pancreatic cell-types TCA cycle")
 
@@ -308,6 +308,105 @@ Sample data:
 In this example, we will set up the *Recon1* network for use with IDARE and add some additional annotations to the network.
 
 ### 1.1 Loading the Recon1 model
+Load the zebrafish network by selecting:
+
+File --> Import --> Network --> Network from File and select the zebrafish file you downloaded.
+Select the Base network view (it should have 10799 nodes and 29932 edges).
+
+### 1.2 Setting up the Network for IDARE
+
+Right click on some empty space in the network view.
+
+Select 'Apps' --> IDARE --> 'Setup Network For IDARE'  
+A popup will appear that lets you select the properties to be used in IDARE.  
+On the left you can select the columns you want to use for the setup. On the right, depending on your choice of columns, you can select the values to be used for compound and interaction.  
+Select 'sbml type' as column to determine node types and the 'sbml id' as column to determine the node names.  
+As compound node value select 'species', and as interaction node value select 'reaction'.  
+Tick the 'Overwrite existing values' checkbox and click 'OK'.  
+
+### 1.3 Changing to the IDARE Visual Style
+From the 'Style' tab in the 'Control Panel' select the 'IDARE Visual Style' and apply it to the network. 
+
+Note, that the IDARE images cannot be removed from this style. 
+
+If you want to use the images with another style, you can add and remove them by right-clicking in the display area, and select 
+Apps --> Add/Remove IDARE Images
+
+### 1.4 Adding SBML Annotations and Gene Nodes
+Right click on some empty space in the network view.  
+Select 'Apps' --> 'Add SBML Annotations'
+
+Leave all boxes ticked and click 'OK'.
+
+You will notice that additional nodes and edges have been created (total of 10331 nodes and 30032 edges), which represent the protein and gene nodes that were created. Proteins are created for all conjunctive GPR clauses (i.e. all possible and combinations that fulfill a GPR).  
+If the SBML contains enzyme species (annotated by the "isEncodedBy" bio qualifier), you would be asked which labeling pattern (i.e. database) to use for the genes and proteins.
+
+
+## Part2: Automated image generation and loading images to the Network.
+In this part you will generate images using the same omics datasets from the original IDARE paper[8].  
+This part assumes you have loaded the Recon1 model and set up the network for IDARE (see Part 1 before).
+
+### Load Data into IDARE
+In the 'Control Panel', select the IDARE tab. 
+
+Click on 'Add Dataset'
+
+In the dialog, click on 'Choose File'  
+
+Select "Expression_All_Genes_1.xlsx" and click 'open'. You can leave the 'DataSet Description' as the filename or edit to something you like.  
+As 'DataSet Type', select 'Array Dataset' (this dataset contains only one sheet).  
+Check the 'Use two column headers' option, since the dataset provides id and label columns.  
+Click ok.  
+
+Repeat the process for the 3 remaining datasets:
+-"Predictions_1.xlsx";   
+-"H3K4Data_1.xlsx";    
+-"TF_Data_1.xlsx";   
+
+
+### 2.2 Create the Visualisation
+
+Tick the boxes to select the datasets. 
+In the lower left corner, (below the 'Create' and 'Preview' buttons) are indicators, how many nodes the datasets represent in total and how many shared nodes the selection contains.  
+
+As 'Visualization Type' select 'Time Series' for "Expression_All_Genes_1.xlsx" and "Predictions_1.xlsx"; 'Gridded Circles' for "H3K4Data_1.xlsx" and 'Circles' for "TF_Data_1.xlsx". 
+
+Click on 'Preview Visualization' to see an example node and legend.
+Once done, click on 'Create Visualization' to display the images onto the network. You may need to zoom in several times to see the images on the gene nodes.
+
+For the 'Colors', select blue-yellow-red for the datasets with 3 levels and blue-red for the transcription factor dataset, which only has 2 levels.
+
+### 2.3 Adding IDARE images to other Styles
+If you did not select the IDARE visual style, but want to use a different style for your network, you can do so by right-clicking anywhere in a network view using the style you want to add your nodes to.
+Select 'Apps' --> 'Add IDARE Images'. Now the images will be shown for your choosen style.
+
+
+## Part3: Subnetwork Generation
+
+It is necessary to have the SBML annotations added to the network (step 1.4), as otherwise the corresponding table column does not exist.
+
+### 3.1 Create subnetworks
+
+Select 'Apps' --> 'IDARE' --> 'Create Subnetworks'  
+or  
+Right Click in an empty space in the network you want to create subnetworks in --> 'Apps' --> 'Create Subnetworks'  
+
+In the resulting dialog, you can select the column to determine the node types as well as the node names.  
+If the network is set up for IDARE (see Part 1), appropriate columns are chosen automatically (i.e. if you have set up the network for IDARE - Step 1.3 - you can just accept the selection).  
+You further have to choose a value for nodes which form the branching points between subnetworks, and a value for nodes that form the "base" of the subnetwork.
+
+Select 'reactions' as branching nodes and 'species' as subnetwork nodes and click 'OK'.   
+
+In the next window, you can select the column that contains the subnetwork identifiers (select "subsystem") as well as the type of layout that should be used for the subnetwork (select "Keep Layout" / you can also try others).
+
+The table allows you to select nodes, which should not branch and those which should be removed entirely  (e.g. nodes with too many connections).   
+Depending on the network size some nodes are already suggested by the tool. 
+
+Next, select nodes that should be removed as they are highly connected (and secondary). Leave as is or tick additional boxes to remove more metabolites.
+
+Finally, in the bottom part, select which subnetworks to generate. You can scroll down and you will see a button for "Select All". Make your selection(s) and click 'OK', the different subnetworks will be generated.
+
+We have manually laid out the TAG synthesis pathway as in the manuscript Figure 1. To obtain the exact same network, load the Cytoscape session [TAG synthesis IDARE1](https://github.com/sysbiolux/IDARE-QuickStart/tree/master/Data/human/TAGsynthesisIDARE1.cys) into Cytoscape and repeat the previous steps of Example 3 to get this image: ![Alt text](Data/human/TGAFlux.pdf?raw=true "Recon1 TAG synthesis pathway IDARE1")
 
 
 # Citations
