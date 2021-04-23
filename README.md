@@ -48,7 +48,7 @@ Right click on some empty space in the network view.
 Select 'Apps' --> IDARE --> 'Setup Network For IDARE'  
 A popup will appear that lets you select the properties to be used in IDARE.  
 On the left you can select the columns you want to use for the setup. On the right, depending on your choice of columns, you can select the values to be used for compound and interaction.  
-Select the sbml type column as column to determine node types and the sbml id column as column to determine the node names.  
+Select the 'sbml type' column as column to determine node types and the 'sbml id' column as column to determine the node names.  
 As compound node value select species, and as interaction node value select reaction.  
 Check the 'Overwrite existing values' checkbox.  
 If you are using cy3sbml please select the Base network view (it should have 187 nodes and 380 edges).
