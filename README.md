@@ -36,7 +36,7 @@ In this example, we will set up the *E.coli* core network for use with IDARE and
 ### 1.1 Loading the E.coli core model
 After installing the IDARE app (either from the Cytoscape app store or from [here](https://github.com/sysbiolux/IDARE/releases/download/2.0/IDARE-2.0.jar)), load the *E.coli* core network by selecting:
 
-File --> Import --> Network --> Network from File and select the *E.coli* core file you downloaded.
+File --> Import --> Network from File and select the *E.coli* core file you downloaded.
 
 ### 1.2 Generating an initial Layout
 From the Layout menu, select a layout you want to apply (for this tutorial we assume, that the **y-Files organic layout** was choosen, or no additional layout if you have cy3sbml installed).
@@ -183,7 +183,7 @@ In this example, we will set up the *zebrafish* network for use with IDARE and a
 ### 1.1 Loading the zebrafish metabolic model
 Load the zebrafish network by selecting:
 
-File --> Import --> Network --> Network from File and select the zebrafish file you downloaded.
+File --> Import --> Network from File and select the zebrafish file you downloaded.
 Select the Base network view (it should have 8678 nodes and 21059 edges).
 
 The zebrafish model does not contain info on the subsystems (pathways) reactions belongs to.
